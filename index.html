@@ -71,6 +71,17 @@
         border-radius: 50%;
         z-index: 2;
       }
+      .hidden {
+        display: none;
+      }
+
+      #imageModal {
+        display: none;
+      }
+
+      #imageModal.active {
+        display: flex;
+      }
     </style>
   </head>
   <body class="bg-black text-white">
@@ -415,7 +426,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Image of AI Core Logging project"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/work/ai_core.png"
             />
             <div class="mt-2">
@@ -433,7 +444,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Image of GeoAI project"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/work/geoai1.png"
             />
             <div class="mt-2">
@@ -449,7 +460,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Image of Geologging project"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/work/geologging2.jpg"
             />
             <div class="mt-2">
@@ -467,7 +478,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Image of Grain Counting Analysis project"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/work/gca2.jpg"
             />
             <div class="mt-2">
@@ -477,6 +488,61 @@
               </p>
               <a
                 href="https://github.com/arifsoul/grain-counting-analysis"
+                class="text-white hover:underline"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Plants Segmentations"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
+              src="assets/img/work/sam2.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Plants Segmentations</h5>
+              <p class="text-white">
+                Plants Segmentations and Classifications using SAM2 on sattelite
+                imagery
+              </p>
+              <a
+                href="https://github.com/arifsoul/sattelite_sam2_geospatial"
+                class="text-white hover:underline"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Automatic Plate Recognitions"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
+              src="assets/img/work/alpr.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Automatic Plate Recognitions</h5>
+              <p class="text-white">
+                Automatic Plate Recognitions using ultimateALPR-SDK
+              </p>
+              <a
+                href="https://github.com/arifsoul/alpr"
+                class="text-white hover:underline"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Vehicles Counting"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
+              src="assets/img/work/vehicle_counting.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Vehicles Counting</h5>
+              <p class="text-white">
+                Vehicles Counting using YoloV11
+              </p>
+              <a
+                href="https://github.com/arifsoul/vehicle_counting"
                 class="text-white hover:underline"
                 >View Project</a
               >
@@ -501,7 +567,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Google Cloud Big Data Certificate"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/certificate/big_data.png"
             />
             <div class="mt-2">
@@ -519,7 +585,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Getting Started with AI Certificate"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/certificate/getting_started.png"
             />
             <div class="mt-2">
@@ -535,7 +601,7 @@
           <div class="bg-black p-4 rounded shadow">
             <img
               alt="Jetson AI Specialist Certificate"
-              class="w-full h-48 object-cover rounded"
+              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
               src="assets/img/certificate/jetson_ai_specialist.png"
             />
             <div class="mt-2">
@@ -566,6 +632,24 @@
       </div>
     </div>
     <!-- End Footer -->
+
+    <!-- Modal for Image Zoom -->
+    <div
+      id="imageModal"
+      class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50"
+    >
+      <img
+        id="modalImage"
+        class="max-w-full max-h-full rounded"
+        alt="Zoomed Image"
+      />
+      <button
+        id="closeModal"
+        class="absolute top-4 right-4 text-white text-3xl font-bold cursor-pointer"
+      >
+        &times;
+      </button>
+    </div>
 
     <script>
       const typingText = document.getElementById("typing-text");
@@ -604,6 +688,33 @@
 
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+      });
+
+      // JavaScript to handle image modal
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const closeModal = document.getElementById("closeModal");
+
+        // Add click event to all portfolio/certificate images
+        document.querySelectorAll(".portfolio-image").forEach((img) => {
+          img.addEventListener("click", () => {
+            modalImage.src = img.src; // Set modal image source
+            modal.classList.add("active"); // Show modal
+          });
+        });
+
+        // Close modal when clicking on the close button
+        closeModal.addEventListener("click", () => {
+          modal.classList.remove("active"); // Hide modal
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener("click", (e) => {
+          if (e.target !== modalImage) {
+            modal.classList.remove("active"); // Hide modal
+          }
+        });
       });
     </script>
   </body>
