@@ -1,728 +1,613 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <!-- <meta name="copyright" content="MACode ID, https://www.macodeid.com/" /> -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="description"
+      content="Ahmad Arif Sultoni's portfolio showcasing expertise in AI Engineering, computer vision, and machine learning projects."
+    />
+    <meta
+      name="keywords"
+      content="AI Engineer, Portfolio, Computer Vision, Machine Learning, Python, TensorFlow"
+    />
 
     <title>Ahmad Arif Sultoni - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bg-image {
+        background-image: url("assets/img/wallpaperrrAI.webp");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #typing-text {
+        font-size: 48px;
+      }
+      #typing-text-2 {
+        font-size: 24px;
+      }
 
-    <link rel="shortcut icon" href="/assets/ikon.png" type="image/x-icon" />
+      .img-place {
+        position: relative;
+        width: 300px;
+        height: 300px;
+      }
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/themify-icons.css" />
+      .circle-bg {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
+      }
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/animate/animate.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/owl-carousel/owl.carousel.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/nice-select/css/nice-select.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/vendor/fancybox/css/jquery.fancybox.min.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/virtual.css" />
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/topbar.virtual.css" />
+      .profile-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; /* Sedikit lebih kecil dari lingkaran putih */
+        height: auto;
+        border-radius: 50%;
+        z-index: 2;
+      }
+    </style>
   </head>
-  <body class="theme-blue">
-    <!-- Back to top button -->
-    <div class="btn-back_to_top">
-      <span class="ti-arrow-up"></span>
-    </div>
-
-    <!-- Setting button -->
-    <!-- <div class="config">
-      <div class="template-config"> -->
-    <!-- Settings -->
-    <!-- <div class="d-block">
-          <button class="btn btn-fab btn-sm" id="sideel" title="Settings"><span class="ti-settings"></span></button>
-        </div> -->
-    <!-- Puschase -->
-    <!-- <div class="d-block">
-          <a href="https://macodeid.com/projects/virtual-folio/" class="btn btn-fab btn-sm" title="Get this template" data-toggle="tooltip" data-placement="left"><span class="ti-download"></span></a>
-        </div> -->
-    <!-- Help -->
-    <!-- <div class="d-block">
-          <a href="#" class="btn btn-fab btn-sm" title="Help" data-toggle="tooltip" data-placement="left"><span class="ti-help"></span></a>
-        </div>
+  <body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="bg-black py-4 sticky top-0">
+      <div class="container mx-auto flex justify-between items-center">
+        <a class="text-lg font-bold text-white mx-4" href=""> My Portfolio </a>
+        <button class="lg:hidden mx-4" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="hidden lg:flex justify-end items-center space-x-4" id="menu">
+          <li><a class="hover:text-white" href="#about">About</a></li>
+          <li><a class="hover:text-white" href="#portfolio">Portfolio</a></li>
+          <li>
+            <a class="hover:text-white" href="#certificate">Certificate</a>
+          </li>
+          <li><a class="hover:text-white" href="#experience">Experience</a></li>
+          <li><a class="hover:text-white" href="#education">Education</a></li>
+        </ul>
       </div>
-      <div class="set-menu">
-        <p>Select Color</p>
-        <div class="color-bar" data-toggle="selected">
-          <span class="color-item bg-theme-red selected" data-class="theme-red"></span>
-          <span class="color-item bg-theme-blue" data-class="theme-blue"></span>
-          <span class="color-item bg-theme-green" data-class="theme-green"></span>
-          <span class="color-item bg-theme-orange" data-class="theme-orange"></span>
-          <span class="color-item bg-theme-purple" data-class="theme-purple"></span>
-        </div>
-        <select class="custom-select d-block my-2" id="change-page">
-          <option value="">Choose Page</option>
-          <option value="index">Topbar</option>
-          <option value="blog-topbar">Blog (Topbar)</option>
-          <option value="index-2">Minibar</option>
-          <option value="blog-minibar">Blog (Minibar)</option>
-        </select>
-      </div>
-    </div> -->
 
-    <div class="vg-page page-home" id="home" style="background-image: url(/assets/img/wallpaperrrAI.webp)">
-      <!-- Navbar -->
-      <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
-        <div class="container">
-          <a href="" class="navbar-brand">My Portfolio</a>
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
-            <span class="ti-menu"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a href="#home" class="nav-link" data-animate="scrolling">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="#about" class="nav-link" data-animate="scrolling">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="#portfolio" class="nav-link" data-animate="scrolling">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a href="#certificate" class="nav-link" data-animate="scrolling">Certificate</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a href="#blog" class="nav-link" data-animate="scrolling">Blog</a>
-              </li> -->
-              <li class="nav-item">
-                <a href="#contact" class="nav-link" data-animate="scrolling">Contact</a>
-              </li>
-            </ul>
-            <!-- <ul class="nav ml-auto">
-              <li class="nav-item">
-                <button class="btn btn-fab btn-theme no-shadow">En</button>
-              </li>
-            </ul> -->
+      <!-- Mobile Menu -->
+      <ul class="lg:hidden flex flex-col items-center hidden" id="mobile-menu">
+        <li><a class="hover:text-white py-2" href="#home">Home</a></li>
+        <li><a class="hover:text-white py-2" href="#about">About</a></li>
+        <li>
+          <a class="hover:text-white py-2" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="hover:text-white py-2" href="#certificate">Certificate</a>
+        </li>
+        <li>
+          <a class="hover:text-white py-2" href="#experience">Experience</a>
+        </li>
+        <li>
+          <a class="hover:text-white py-2" href="#education">Education</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Caption header -->
+    <div class="bg-image">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <div class="text-center">
+          <h1 class="text-3xl font-bold text-white" id="typing-text">
+            <span class="text-cyan-500 text-3xl font-bold">I'm</span>
+            <b class="text-white" id="name"></b>
+          </h1>
+          <br />
+          <div class="bg-black text-white inline-block px-2 py-1 rounded w-1/2">
+            <span class="text-lg font-bold" id="typing-text-2"></span>
           </div>
         </div>
       </div>
-      <!-- End Navbar -->
-      <!-- Caption header -->
-      <div class="caption-header text-center wow zoomInDown">
-        <h5 class="fw-normal">Welcome</h5>
-        <h1 class="fw-dark mb-4">I'm <b class="fg-theme">Ahmad</b> Arif Sultoni</h1>
-        <div class="badge">AI Engineer</div>
-      </div>
-      <!-- End Caption header -->
-      <div class="floating-button"><span class="ti-mouse"></span></div>
     </div>
+    <!-- End Caption header -->
 
-    <div class="vg-page page-about" id="about">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-lg-4 py-3">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/nobgwisudax.png" alt="profil image" />
+    <!-- About -->
+    <div class="bg-black py-4" id="about">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <h1 class="text-3xl font-bold text-white">About</h1>
+        <br />
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/3 py-3 px-4">
+            <div class="img-place">
+              <div
+                class="rounded-full w-full h-auto bg-white"
+                style="height: 300px; width: 300px; position: relative"
+              ></div>
+              <img
+                alt="Profile image of Ahmad Arif Sultoni"
+                class="rounded-full w-full h-auto absolute top-0 left-0"
+                height="300"
+                src="assets/img/ppgrey.png"
+                width="300"
+                style="z-index: 1"
+              />
             </div>
           </div>
-          <div class="col-lg-6 offset-lg-1 wow fadeInRight">
-            <h1 class="fw-dark">Ahmad Arif Sultoni</h1>
-            <h5 class="fg-theme mb-3">AI Engineer</h5>
-            <p class="text-muted">Mechatronics graduate with 3 years experience hands on with deep learning and developing computer vision systems using OpenCV, Tensorflow and Darknet framework on the nvidia jetson nano developer kit and google colaboratory</p>
-            <ul class="theme-list">
+          <div class="w-full md:w-2/3 py-3 px-4">
+            <h1 class="text-2xl font-bold text-white">Ahmad Arif Sultoni</h1>
+            <h2 class="text-lg font-bold text-white">AI Engineer</h2>
+            <br />
+            <p class="text-white text-left">
+              I am an AI Engineer with 2 years of experience in developing deep
+              learning and computer vision-based solutions. I have a great
+              interest in optimizing machine learning models for various tasks
+              such as object detection, segmentation, and image classification,
+              especially in the mining industry sector. With a strong background
+              in Python, TensorFlow, and PyTorch, I always strive to deliver the
+              best results in every project while remaining focused on efficient
+              use of resources. I enjoy working in a team and am open to
+              continuing to learn and develop in the field of AI, with the aim
+              of making a positive contribution in every available opportunity.
+            </p>
+            <br />
+            <ul class="list-disc pl-5 text-left">
               <li><b>From:</b> Pemalang, Central Java, Indonesia</li>
               <li><b>Lives In:</b> Jakarta, Indonesia</li>
-              <li><b>Age:</b> 22</li>
+              <li><b>Age:</b> 25</li>
               <li><b>Gender:</b> Male</li>
             </ul>
-            <!-- <button class="btn btn-theme-outline">Download CV</button> -->
-          </div>
-        </div>
-      </div>
-      <div class="container py-6">
-        <h1 class="fw-normal wow fadeIn">Ability</h1>
-        <div class="row py-1">
-          <div class="col-md-2">
-            <div class="px-lg-1">
-              <h4 class="wow fadeInUp">Coding skills</h4>
-              <div class="wow fadeInUp">
-                <!-- <span class="caption">Python</span> -->
-                <!-- <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 86%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">86%</div>
-                </div> -->
-                
-                <ul class="theme-list">
-                  <li>Python</li>
-                  <li>R</li>
-                  <li>SQL</li>
-                  <li>C++</li>
-                  <li>Javascript</li>
-                  <li>HTML CSS</li>
-                </ul>
-              </div>  
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="px-lg-3">
-              <h4 class="wow fadeInUp">Framework</h4>
-              <div class="wow fadeInUp">
-                <!-- <span class="caption">Tensorflow</span> -->
-                <!-- <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">85%</div>
-                </div> -->
-                <ul class="theme-list">
-                  <li>Tensorflow</li>
-                  <li>Keras</li>
-                  <li>Pytorch</li>
-                  <li>Sklearn</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="container pt-5">
-        <div class="row">
-          <div class="col-md-6 wow fadeInRight">
-            <h2 class="fw-normal">Education</h2>
-            <ul class="timeline mt-4 pr-md-5">
+            <br />
+            <!-- Contact Section in About -->
+            <ul class="list-none text-white text-left">
               <li>
-                <div class="title">2017 - 2022</div>
-                <div class="details">
-                  <h5>Mechatronics Engineering Education</h5>
-                  <small class="fg-theme">Universitas Negeri Yogyakarta</small>
-                  <small class="fg-theme">GPA : 3.52</small>
-                  <p>Thesis title:</p>
-                  <p>Development of Object Detection Prototype Using Tensorflow Object Detection API and Google Colaboratory as Learning Media in Visual Sensing Robot Course</p><br/>
-                  <p><a href= https://github.com/arifsoul/prototype-pendeteksi-objek target="blank">Project Repository</a></p><br/>
-                  <p>Demo Video</p>
-                  <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iHzHavG4CKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                  <p><a href= https://bit.ly/prototype-colaboratory target="blank">Get Started</a></p><br/>
-                </div>
+                <i class="fas fa-envelope"></i>
+                <a
+                  href="mailto:ahmadarifsultoni7@gmail.com"
+                  class="text-white hover:underline"
+                  >Email</a
+                >
               </li>
               <li>
-                <div class="title">2014 - 2017</div>
-                <div class="details">
-                  <h5>Natural Science and Mathematics</h5>
-                  <small class="fg-theme">SMA Negeri 1 Comal</small>
-                  <p></p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
-            <h2 class="fw-normal">Experience</h2>
-            <ul class="timeline mt-4 pr-md-5">
-              <li>
-                <div class="title">2022 - Current</div>
-                <div class="details">
-                  <h5>Artificial Intelligence Engineer</h5>
-                  <small class="fg-theme">Safepedia</small>
-                  <p>Implement deep learning models for computer vision using the Tensorflow and Pytorch frameworks, and develop APIs on the server</p>
-                </div>
+                <i class="fab fa-linkedin"></i>
+                <a
+                  href="https://www.linkedin.com/in/ahmad-arif-123210/"
+                  class="text-white hover:underline"
+                  >LinkedIn</a
+                >
               </li>
               <li>
-                <div class="title">2021</div>
-                <div class="details">
-                  <h5>Tutor</h5>
-                  <small class="fg-theme">Indobot Academy</small>
-                  <p>Guiding students in learning about the basic programming of NodeMCU for IoT and receiving student consultations in doing their final project</p>
-                </div>
-              </li>
-              <li>
-                <div class="title">2018 - 2021</div>
-                <div class="details">
-                  <h5>Computer Vision Programmer</h5>
-                  <small class="fg-theme">UNY Robotics Team</small>
-                  <p>Develop object detection system on wheeled soccer robot using python programming language, openCV library and Tensorflow framework</p><br />
-                  <p>Achievment:</p><br/>
-                  <p><a href="https://presma.uny.ac.id/prestasi-presma.html?id=0qS6Jrllc4E%2Fc3DpdI6RACecPWPvHh1m2z15gqfAqzw%3D" target="blank">1st place Indonesian wheeled soccer Robot Contest at the National Level (2021)</a></p><br/>
-                  <p><a href="https://presma.uny.ac.id/prestasi-presma.html?id=cpXog0PvpARuxKy0%2BgBHS3pbFT2XZ3ASvh4ws6pvgps%3D" target="blank">3rd place Indonesian wheeled soccer Robot Contest at the National Level (2020)</a></p><br/>
-                  <p><a href="https://presma.uny.ac.id/prestasi-presma.html?id=66JWzKoS6A5nLj4bZdkgio2R3UCe4SB4VlRSfPZZvz8%3D" target="blank">2nd place Indonesian wheeled soccer Robot Contest at the Regional Level (2019)</a></p><br/>
-                </div>
+                <i class="fab fa-github"></i>
+                <a
+                  href="https://github.com/arifsoul"
+                  class="text-white hover:underline"
+                  >GitHub</a
+                >
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
+    <!-- End About -->
 
-    <!-- <div class="vg-page page-service">
-      <div class="container">
-        <div class="text-center wow fadeInUp">
-          <div class="badge badge-subhead">Service</div>
-        </div>
-        <h1 class="fw-normal text-center wow fadeInUp">What can i do?</h1>
-        <div class="row mt-5">
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card card-service wow fadeInUp">
-              <div class="icon">
-                <span class="ti-paint-bucket"></span>
-              </div>
-              <div class="caption">
-                <h4 class="fg-theme">Web Design</h4>
-                <p>There are many variations of passages of Lorem Ipsum available</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card card-service wow fadeInUp">
-              <div class="icon">
-                <span class="ti-search"></span>
-              </div>
-              <div class="caption">
-                <h4 class="fg-theme">SEO</h4>
-                <p>There are many variations of passages of Lorem Ipsum available</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card card-service wow fadeInUp">
-              <div class="icon">
-                <span class="ti-vector"></span>
-              </div>
-              <div class="caption">
-                <h4 class="fg-theme">UI/UX Design</h4>
-                <p>There are many variations of passages of Lorem Ipsum available</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card card-service wow fadeInUp">
-              <div class="icon">
-                <span class="ti-desktop"></span>
-              </div>
-              <div class="caption">
-                <h4 class="fg-theme">Web Development</h4>
-                <p>There are many variations of passages of Lorem Ipsum available</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="vg-page page-funfact" style="background-image: url(/assets/img/bg_banner.jpg)">
-      <div class="container">
-        <div class="row section-counter">
-          <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-            <h1 class="number" data-number="768">768</h1>
-            <span>Clients</span>
-          </div>
-          <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-            <h1 class="number" data-number="230">230</h1>
-            <span>Project Compleate</span>
-          </div>
-          <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-            <h1 class="number" data-number="97">97</h1>
-            <span>Project Ongoing</span>
-          </div>
-          <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
-            <h1 class="number" data-number="699">699</h1>
-            <span>Client Satisfaction</span>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Portfolio page -->
-    <div class="vg-page page-portfolio" id="portfolio">
-      <div class="container">
-        <div class="text-center wow fadeInUp">
-          <div class="badge badge-subhead">Portfolio</div>
-        </div>
-        <h1 class="text-center fw-normal wow fadeInUp">See my work</h1>
-        <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
-          <button class="btn btn-theme-outline selected" data-filter="*">All</button>
-          <button class="btn btn-theme-outline" data-filter=".computer_vision, .certificate">Computer Vision</button>
-          <button class="btn btn-theme-outline" data-filter=".education, .certificate">Education</button>
-          <button class="btn btn-theme-outline" data-filter=".robotic, .certificate" >Robotic</button>
-        </div>
-
-        <div class="gridder my-3">
-          <div class="grid-item education wow zoomIn">
-            <div class="img-place" data-src="/assets/img/work/indobot.jpeg" data-fancybox data-caption="<h5 class='fg-theme'>Tutor activities at Indobot Academy</h5> 
-              <p>Assisting students in making the final project of a masked visitor monitoring system based on machine learning and computer vision </p>">
-              <img src="/assets/img/work/indobot.jpeg" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Mentoring Final Project</h5>
-                <p>Tutor</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item education wow zoomIn">
-            <div class="img-place" data-src="/assets/img/work/learningmedia.png" data-fancybox data-caption="<h5 class='fg-theme'>Object Detection Learning Media</h5> 
-              <p>Creating object detection learning media based on the Tensorflow Object Detection API and Google Colaboratory, for learning robot visual sensing courses in the Mechatronic Engineering Education study program, Universitas Negeri Yogyakarta</p>">
-              <img src="/assets/img/work/learningmedia.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Learning Media</h5>
-                <p>Google Colab, Tensorflow, Python</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item computer_vision wow zoomIn">
-            <div class="img-place" data-src="/assets/img/work/facedetection.png" data-fancybox data-caption="<h5 class='fg-theme'>Face detection with YoloV3</h5> <p>Development of a face detection system using the YoloV3 and OpenCV algorithms by accessing two cameras</p>">
-              <img src="/assets/img/work/facedetection.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Face Detection</h5>
-                <p>YoloV3, OpenCV, Python</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item robotic wow zoomIn">
-            <div class="img-place" data-src="/assets/img/work/roboball.png" data-fancybox data-caption="<h5 class='fg-theme'>Ball Detection</h5> <p>Implemented YoloV3 algorithm to detect ball on wheeled soccer robot using Nvidia Jetson Nano device</p>">
-              <img src="/assets/img/work/roboball.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Ball Detection and Tracking</h5>
-                <p>YoloV3, OpenCV, Jetson Nano, Python</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End gridder -->
-        <!-- <div class="text-center wow fadeInUp">
-          <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
-        </div> -->
+    <!-- Skills -->
+    <div class="bg-black py-4">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <h1 class="text-3xl font-bold text-white">Skills</h1>
+        <br />
+        <ul
+          class="list-disc text-white pl-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+        >
+          <li>Python</li>
+          <li>C++</li>
+          <li>TensorFlow</li>
+          <li>OpenCV</li>
+          <li>PyTorch</li>
+          <li>Linux</li>
+          <li>Google Colab</li>
+          <li>Google Cloud</li>
+          <li>SQL</li>
+          <li>NVIDIA Jetson</li>
+          <li>Natural Language Processing</li>
+          <li>Computer Vision</li>
+          <li>OCR</li>
+          <li>Image Processing</li>
+          <li>Embedded Systems</li>
+        </ul>
       </div>
     </div>
-    <!-- End Portfolio page -->
+    <!-- End Skills -->
 
-    <!-- Certificate page -->
-    <div class="vg-page page-certificate" id="certificate">
-      <div class="container">
-        <div class="text-center wow fadeInUp">
-          <div class="badge badge-subhead">Certificate</div>
+    <!-- Education -->
+    <div class="bg-black py-4" id="education">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <h1 class="text-3xl font-bold text-white">Education</h1>
+        <br />
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 py-3 px-4">
+            <p class="text-white text-left font-bold">
+              <i class="fas fa-graduation-cap"></i>
+              Mechatronic Engineering Education 2022
+            </p>
+            <p>Universitas Negeri Yogyakarta - Bachelor's degree</p>
+            <p>GPA: 3.52</p>
+            <br />
+            <p class="text-white text-left">Essay:</p>
+            <p class="text-white text-left">
+              Development of Object Detection Prototype Using TensorFlow Object
+              Detection API and Google Colaboratory as Learning Media in Visual
+              Sensing Robot Course
+            </p>
+            <br />
+            <ul class="list-disc pl-5 text-left">
+              <li>
+                1st place Indonesian wheeled soccer Robot Contest at the
+                National Level (2021)
+              </li>
+              <li>
+                3rd place Indonesian wheeled soccer Robot Contest at the
+                National Level (2020)
+              </li>
+              <li>
+                2nd place Indonesian wheeled soccer Robot Contest at the
+                Regional Level (2019)
+              </li>
+            </ul>
+          </div>
         </div>
-        <h1 class="text-center fw-normal wow fadeInUp">Certificate</h1>
-        <!-- <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
-          <button class="btn btn-theme-outline selected" data-filter="*">All</button>
-          <button class="btn btn-theme-outline" data-filter=".nvidia">Nvidia</button>
-          <button class="btn btn-theme-outline" data-filter=".kominfo">Kominfo</button>
-        </div> -->
-
-        <div class="gridder page-certificate my-3">
-          <div class="grid-item certificate wow zoomIn">
-            <div class="img-place" data-src="/assets/img/certificate/certif_nvidia2.png" data-fancybox data-caption="<h5 class='fg-theme'>Jetson AI Specialist</h5> <p>Artificial Intelligence</p>">
-              <img src="/assets/img/certificate/certif_nvidia2.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Jetson AI Specialist</h5>
-                <p>Artificial Intelligence</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item certificate wow zoomIn">
-            <div class="img-place" data-src="/assets/img/certificate/certif_nvidia1.png" data-fancybox data-caption="<h5 class='fg-theme'>Getting Started with AI on Jetson Nano</h5> <p>Jetson Nano developer Kit</p>">
-              <img src="/assets/img/certificate/certif_nvidia1.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Getting Started with AI on Jetson Nano</h5>
-                <p>Jetson Nano developer Kit</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-item certificate wow zoomIn">
-            <div class="img-place" data-src="/assets/img/certificate/certif_kominfo.png" data-fancybox data-caption="<h5 class='fg-theme'>Fresh Graduate Academy</h5> <p>Machine Learning</p>">
-              <img src="/assets/img/certificate/certif_kominfo.png" alt="project image" />
-              <div class="img-caption">
-                <h5 class="fg-theme">Fresh Graduate Academy</h5>
-                <p>Machine Learning</p>
-              </div>
-            </div>
-          </div>
-        <!-- End gridder -->
-        <!-- <div class="text-center wow fadeInUp">
-          <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
-        </div> -->
       </div>
     </div>
-    <!-- End Certificate page -->
+    <!-- End Education -->
 
-    <!-- Testimonial -->
-    <!-- <div class="vg-page page-testimonial">
-      <div class="container">
-        <h1 class="text-center fw-normal wow fadeInUp">What Clients are Saying</h1>
-        <div class="row justify-content-center mt-5 wow fadeInUp">
-          <div class="col-md-9">
-            <div class="owl-carousel testi-carousel">
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="img-place">
-                      <img src="/assets/img/testimonials/testimonials_1.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="caption">
-                      <div class="testi-content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered</div>
-                      <div class="testi-info">
-                        <div class="thumb-profile">
-                          <img src="/assets/img/testimonials/testimonials_1.jpg" alt="" />
-                        </div>
-                        <div class="tagline">
-                          <h5 class="mb-0">Satria Nugraha</h5>
-                          <span class="text-muted">CEO Nutshell</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="img-place">
-                      <img src="/assets/img/testimonials/testimonials_2.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="caption">
-                      <div class="testi-content">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe natus expedita ab facilis ut, animi explicabo amet. Voluptatibus possimus iste enim, doloremque, fugiat accusamus nisi optio fugit ratione expedita
-                        harum?
-                      </div>
-                      <div class="testi-info">
-                        <div class="thumb-profile">
-                          <img src="/assets/img/testimonials/testimonials_2.jpg" alt="" />
-                        </div>
-                        <div class="tagline">
-                          <h5 class="mb-0">Selena Arrini</h5>
-                          <span class="text-muted">CEO BigTree</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- Experience -->
+    <div class="bg-black py-4" id="experience">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <h1 class="text-3xl font-bold text-white">Experience</h1>
+        <br />
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 py-3 px-4">
+            <ul class="list-disc pl-5">
+              <li>
+                <b
+                  >Artificial Intelligence Engineer, PT. Safepedia Global
+                  Teknologi (04/2022 - Present)</b
+                >
+                <ul class="list-disc pl-5">
+                  <li>
+                    <b>AI Core Logging – PT. Freeport Indonesia</b>
+                    <ul class="list-disc pl-5">
+                      <li>
+                        Developed a deep learning-based application for
+                        analyzing core photos from drilling operations.
+                      </li>
+                      <li>
+                        Detected and analyzed key features on core images with
+                        segmentation and joint analysis.
+                      </li>
+                      <li>
+                        Differentiated between natural and mechanical fractures
+                        based on images.
+                      </li>
+                      <li>
+                        Built a user-friendly GUI to simplify input and user
+                        interaction.
+                      </li>
+                      <li>
+                        Reduced RAM usage in processing deep learning models to
+                        improve performance.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b>GeoAI – Mind ID</b>
+                    <ul class="list-disc pl-5">
+                      <li>
+                        Developed a mining land detection system using satellite
+                        imagery data and a custom YOLOv8-seg based segmentation
+                        model.
+                      </li>
+                      <li>
+                        Measured mining area sizes with precise geospatial
+                        analysis.
+                      </li>
+                      <li>
+                        Leveraged Google Colab, Makesense.AI, and
+                        segment-geospatial for data annotation, segmentation,
+                        and processing.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b>Geologging – PT. Antam</b>
+                    <ul class="list-disc pl-5">
+                      <li>
+                        Built a quicklog application powered by deep learning
+                        for analyzing core photos from gold mining exploration.
+                      </li>
+                      <li>
+                        Applied Detectron2 for core detection and segmentation,
+                        accelerating the geological logging process.
+                      </li>
+                      <li>
+                        Developed deep learning application methods to increase
+                        effectiveness with limited resources.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b>Grain Counting Analysis – PT. Timah</b>
+                    <ul class="list-disc pl-5">
+                      <li>
+                        Prepared a mineral rock image dataset to train a
+                        segmentation model with Detectron2.
+                      </li>
+                      <li>
+                        Detected, counted rock types, and analyzed mineral
+                        content using predefined constants.
+                      </li>
+                      <li>
+                        Optimized the model for resource efficiency and high
+                        accuracy in mineral analysis.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <br />
+              <li>
+                <b>Freelance Mentor, Indobot Academy (10/2021 - 01/2022)</b>
+                <ul class="list-disc pl-5">
+                  <li>
+                    Assisted students of all skill levels in core subjects,
+                    including programming and electronics.
+                  </li>
+                  <li>Delivered online course material about IoT.</li>
+                  <li>
+                    Trained adult learners in classes, workshops, and via remote
+                    learning programs.
+                  </li>
+                </ul>
+              </li>
+              <br />
+              <li>
+                <b
+                  >Computer Vision Programmer, UNY Robotics Team (10/2018 -
+                  10/2021)</b
+                >
+                <ul class="list-disc pl-5">
+                  <li>
+                    Developed an object detection system on a wheeled soccer
+                    robot using Python programming language, OpenCV library, and
+                    TensorFlow framework on Jetson Nano.
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- End testimonial -->
+    </div>
+    <!-- End Experience -->
 
-    <!-- Client -->
-    <!-- <div class="vg-page page-client">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_1.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_2.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_3.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_4.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_5.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_6.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_7.svg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 item">
-            <div class="img-place wow fadeInUp">
-              <img src="/assets/img/logo/company_8.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End client -->
-
-    <!-- Blog -->
-    <!-- <div class="vg-page page-blog" id="blog">
-      <div class="container">
+    <!-- Portfolio -->
+    <div class="bg-black py-4" id="portfolio">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
         <div class="text-center">
-          <div class="badge badge-subhead wow fadeInUp">Blog</div>
+          <div
+            class="bg-black text-3xl font-bold text-white inline-block px-2 py-1 rounded"
+          >
+            Portfolio
+          </div>
         </div>
-        <h1 class="text-center fw-normal wow fadeInUp">Latest Post</h1>
-        <div class="row post-grid">
-          <div class="col-md-6 col-lg-4 wow fadeInUp">
-            <div class="card">
-              <div class="img-place">
-                <img src="/assets/img/work/work-9.jpg" alt="" />
-              </div>
-              <div class="caption">
-                <a href="javascript:void(0)" class="post-category">Technology</a>
-                <a href="#" class="post-title">Invision design forward fund</a>
-                <span class="post-date"><span class="sr-only">Published on</span> May 22, 2018</span>
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-3">
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Image of AI Core Logging project"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/work/ai_core.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">AI Core Logging</h5>
+              <p class="text-white">
+                Core analysis with segmentation and joint analysis
+              </p>
+              <a
+                href="https://github.com/arifsoul/ai-core-logging"
+                class="text-white hover:underline"
+                >View Project</a
+              >
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 wow fadeInUp">
-            <div class="card">
-              <div class="img-place">
-                <img src="/assets/img/work/work-6.jpg" alt="" />
-              </div>
-              <div class="caption">
-                <a href="javascript:void(0)" class="post-category">Business</a>
-                <a href="#" class="post-title">Announcing a plan for small teams</a>
-                <span class="post-date"><span class="sr-only">Published on</span> May 22, 2018</span>
-              </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Image of GeoAI project"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/work/geoai1.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">GeoAI</h5>
+              <p class="text-white">Mining land detection using YOLOv8-seg</p>
+              <a
+                href="https://github.com/arifsoul/geoai"
+                class="text-white hover:underline"
+                >View Project</a
+              >
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 wow fadeInUp">
-            <div class="card">
-              <div class="img-place">
-                <img src="/assets/img/work/work-1.jpg" alt="" />
-              </div>
-              <div class="caption">
-                <a href="javascript:void(0)" class="post-category">Design</a>
-                <a href="#" class="post-title">5 basic tips for illustrating</a>
-                <span class="post-date"><span class="sr-only">Published on</span> May 22, 2018</span>
-              </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Image of Geologging project"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/work/geologging2.jpg"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Geologging</h5>
+              <p class="text-white">
+                Quick log analysis for gold mining exploration
+              </p>
+              <a
+                href="https://github.com/arifsoul/geologging"
+                class="text-white hover:underline"
+                >View Project</a
+              >
             </div>
           </div>
-          <div class="col-12 text-center py-3 wow fadeInUp">
-            <a href="blog-fullbar.html" class="btn btn-theme">See All Post</a>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Image of Grain Counting Analysis project"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/work/gca2.jpg"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Grain Counting Analysis</h5>
+              <p class="text-white">
+                Rock type detection and mineral content analysis
+              </p>
+              <a
+                href="https://github.com/arifsoul/grain-counting-analysis"
+                class="text-white hover:underline"
+                >View Project</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- End blog -->
+    </div>
+    <!-- End Portfolio -->
 
-    <!-- Contact -->
-    <!-- <div class="vg-page page-contact" id="contact">
-      <div class="container-fluid">
-        <div class="text-center wow fadeInUp">
-          <div class="badge badge-subhead">Contact</div>
+    <!-- Certificates -->
+    <div class="bg-black py-4" id="certificate">
+      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
+        <div class="text-center">
+          <div
+            class="bg-black text-3xl font-bold text-white inline-block px-2 py-1 rounded"
+          >
+            Certificates
+          </div>
         </div>
-        <h1 class="text-center fw-normal wow fadeInUp">Get in touch</h1>
-        <div class="row py-5">
-          <div class="col-lg-7 px-0 pr-lg-3 wow zoomIn">
-            <div class="vg-maps">
-              <div id="google-maps" style="width: 100%; height: 100%"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-3">
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Google Cloud Big Data Certificate"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/certificate/big_data.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Google Cloud Big Data</h5>
+              <p class="text-white">
+                Big Data and Machine Learning Fundamentals
+              </p>
+              <a
+                href="https://github.com/arifsoul/sertifikat/blob/main/big_data.pdf"
+                class="text-white hover:underline"
+                >View Certificate</a
+              >
             </div>
           </div>
-          <div class="col-lg-5">
-            <form class="vg-contact-form">
-              <div class="form-row">
-                <div class="col-12 mt-3 wow fadeInUp">
-                  <input class="form-control" type="text" name="Name" placeholder="Your Name" />
-                </div>
-                <div class="col-6 mt-3 wow fadeInUp">
-                  <input class="form-control" type="text" name="Email" placeholder="Email Address" />
-                </div>
-                <div class="col-6 mt-3 wow fadeInUp">
-                  <input class="form-control" type="text" name="Subject" placeholder="Subject" />
-                </div>
-                <div class="col-12 mt-3 wow fadeInUp">
-                  <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
-                </div>
-                <button type="submit" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
-              </div>
-            </form>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Getting Started with AI Certificate"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/certificate/getting_started.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Getting Started with AI</h5>
+              <p class="text-white">NVIDIA Jetson Nano</p>
+              <a
+                href="https://learn.nvidia.com/certificates?id=acfd253445874c06944cb3f0ab7ac6a1"
+                class="text-white hover:underline"
+                >View Certificate</a
+              >
+            </div>
+          </div>
+          <div class="bg-black p-4 rounded shadow">
+            <img
+              alt="Jetson AI Specialist Certificate"
+              class="w-full h-48 object-cover rounded"
+              src="assets/img/certificate/jetson_ai_specialist.png"
+            />
+            <div class="mt-2">
+              <h5 class="text-white font-bold">Jetson AI Specialist</h5>
+              <p class="text-white">NVIDIA AI Specialist</p>
+              <a
+                href="https://github.com/arifsoul/sertifikat/blob/main/embedded-digital-jetson-ai-specialist-certificate-generation-1471313-Ahmad-Arif-Sultoni.pdf"
+                class="text-white hover:underline"
+                >View Certificate</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- End Contact -->
+    </div>
+    <!-- End Certificates -->
 
     <!-- Footer -->
-    <div class="vg-footer">
-      <h1 class="text-center">My Portfolio</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 py-1">
-            <div class="footer-info">
-              <p>Where to find me</p>
-              <hr class="divider" />
-              <p class="fs-large fg-white">Kebayoran Lama, South Jakarta, Jakarta, Indonesia</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 py-1">
-            <div class="float-lg-right">
-              <p>Follow me</p>
-              <hr class="divider" />
-              <ul class="list-unstyled">
-                <li><a href="https://github.com/arifsoul" target="blank">Github</a></li>
-                <li><a href="https://www.linkedin.com/in/ahmad-arif-123210/" target="blank">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/arifsoul_/" target="blank">Instagram</a></li>
-                <li><a href="https://twitter.com/ahmadarif_soul" target="blank">Twitter</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 py-1">
-            <div class="float-lg-right">
-              <p>Contact me</p>
-              <hr class="divider" />
-              <ul class="list-unstyled">
-                <li><a href="mailto:ahmadarifsultoni7@gmail.com" target="blank">ahmadarifsultoni7@gmail.com</a></li>
-                <li><a href=https://wa.me/+628993621700 target="blank">+628993621700</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-          <div class="col-12 mb-3">
-            <!-- <h3 class="fw-normal text-center">Subscribe</h3>
-          </div>
-          <div class="col-lg-6">
-            <form class="mb-3">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Email address" />
-                <input type="submit" class="btn btn-theme no-shadow" value="Subscribe" />
-              </div>
-            </form> -->
-          </div>
-          <div class="col-12">
-            <p class="text-center mb-0 mt-4">Copyright &copy;2022. All right reserved | made with <span class="ti-heart fg-theme-red"></span> by <a href="https://www.linkedin.com/in/ahmad-arif-123210/" target="blank">Ahmad Arif</a></p>
-          </div>
+    <div class="bg-black py-4">
+      <div class="container mx-auto">
+        <div class="text-center mt-4">
+          <p class="text-white">
+            &copy; 2025. All rights reserved | Made with
+            <i class="fas fa-heart text-red-500"></i>
+            by Ahmad Arif
+          </p>
         </div>
       </div>
     </div>
-    <!-- End footer -->
+    <!-- End Footer -->
 
-    <script src="/assets/js/jquery-3.5.1.min.js"></script>
+    <script>
+      const typingText = document.getElementById("typing-text");
+      const typingText2 = document.getElementById("typing-text-2");
+      const name = document.getElementById("name");
 
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+      const text = "Ahmad Arif Sultoni";
+      const text2 = "AI Engineer";
 
-    <script src="/assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+      let index = 0;
+      let index2 = 0;
 
-    <script src="/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+      function typing() {
+        if (index < text.length) {
+          name.textContent += text[index];
+          index++;
+          setTimeout(typing, 50);
+        }
+      }
 
-    <script src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
+      function typing2() {
+        if (index2 < text2.length) {
+          typingText2.textContent += text2[index2];
+          index2++;
+          setTimeout(typing2, 50);
+        }
+      }
 
-    <script src="/assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+      typing();
+      typing2();
 
-    <script src="/assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-    <script src="/assets/vendor/wow/wow.min.js"></script>
-
-    <script src="/assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
-
-    <script src="/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-
-    <script src="/assets/js/google-maps.js"></script>
-
-    <script src="/assets/js/topbar-virtual.js"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>

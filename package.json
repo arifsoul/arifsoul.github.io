@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pdf-thumbnail": "^1.0.6"
+  }
+}
