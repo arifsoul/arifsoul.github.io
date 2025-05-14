@@ -1,782 +1,492 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta
-      name="description"
-      content="Ahmad Arif Sultoni's portfolio showcasing expertise in AI Engineering, computer vision, and machine learning projects."
-    />
-    <meta
-      name="keywords"
-      content="AI Engineer, Portfolio, Computer Vision, Machine Learning, Python, TensorFlow"
-    />
-
-    <title>Ahmad Arif Sultoni - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .bg-image {
-        background-image: url("assets/img/wallpaperrrAI.webp");
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 20px;
-      }
-      #typing-text {
-        font-size: 64px;
-      }
-      #typing-text-2 {
-        font-size: 36px;
-      }
-      
-      .img-place {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        margin-top: 64px; /* tinggi navbar */
-      }
-
-      .circle-bg {
-        width: 87%; /* Ukuran lingkaran lebih kecil */
-        height: 87%; /* Sama seperti lebar */
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        left: 49%;
-        top: 70%; /* Lingkaran lebih rendah */
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-      }
-
-      .profile-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%; /* Ukuran gambar lebih kecil */
-        height: auto;
-        border-radius: 50%;
-        z-index: 2;
-        object-fit: cover; /* Mengatur ukuran gambar */
-      }
-
-      /* Tambahkan kode CSS untuk teks */
-      .name {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        z-index: 3;
-      }
-
-      /* Tambahkan kode CSS untuk perangkat mobile */
-      @media (max-width: 768px) {
-        .img-place {
-          width: 200px;
-          height: 200px;
-        }
-        .circle-bg {
-          width: 87%;
-          height: 87%;
-        }
-        .profile-img {
-          width: 100%;
-        }
-        .name {
-          font-size: 14px;
-        }
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      #imageModal {
-        display: none;
-      }
-
-      #imageModal.active {
-        display: flex;
-      }
-    </style>
-  </head>
-
-  <body class="bg-black text-white">
-    <!-- Navbar -->
-    <nav class="bg-black py-4 sticky top-0">
-      <div class="container mx-auto flex justify-between items-center">
-        <a class="text-lg font-bold text-white mx-4" href=""> My Portfolio </a>
-        <button class="lg:hidden mx-4" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="hidden lg:flex justify-end items-center space-x-4" id="menu">
-          <li><a class="hover:text-white" href="#about">About</a></li>
-          <li><a class="hover:text-white" href="#skills">Skills</a></li>
-          <li><a class="hover:text-white" href="#education">Education</a></li>
-          <li><a class="hover:text-white" href="#experience">Experience</a></li>
-          <li><a class="hover:text-white" href="#portfolio">Portfolio</a></li>
-          <li>
-            <a class="hover:text-white" href="#certificate">Certificate</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Mobile Menu -->
-      <ul class="lg:hidden flex flex-col items-center hidden" id="mobile-menu">
-        <li><a class="hover:text-white py-2" href="#about">About</a></li>
-        <li><a class="hover:text-white py-2" href="#skills">Skills</a></li>
-        <li>
-          <a class="hover:text-white py-2" href="#education">Education</a>
-        </li>
-        <li>
-          <a class="hover:text-white py-2" href="#experience">Experience</a>
-        </li>
-        <li>
-          <a class="hover:text-white py-2" href="#portfolio">Portfolio</a>
-        </li>
-        <li>
-          <a class="hover:text-white py-2" href="#certificate">Certificate</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- End Navbar -->
-
-    <!-- Caption header -->
-    <div class="bg-image">
-      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <div class="text-center">
-          <h1 class="text-3xl font-bold text-white" id="typing-text">
-            <span class="text-cyan-500 text-3xl font-bold">I'm</span>
-            <b class="text-white" id="name"></b>
-          </h1>
-          <br />
-          <div class="bg-black text-white inline-block px-2 py-1 rounded w-1/2">
-            <span class="text-lg font-bold" id="typing-text-2"></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4b5563;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    .skill-card {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background-color: #4b5563;
+    }
+    .portfolio-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    #imageModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #imageModal.active {
+      display: flex;
+    }
+    #modalImage {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    #closeModal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+    #menu-toggle .bar {
+      width: 20px;
+      height: 2px;
+      background-color: #d1d5db;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+    }
+    #menu-toggle.active .bar:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+    #menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle.active .bar:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+    #mobile-menu {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      z-index: 40;
+      background-color: #1f2937;
+    }
+    #mobile-menu.active {
+      transform: translateY(0);
+    }
+    #mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 30;
+    }
+    #mobile-overlay.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="text-xl font-bold text-white">My Portfolio</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="hidden md:flex space-x-4" id="menu">
+            <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">About</a>
+            <a href="#skills" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Skills</a>
+            <a href="#education" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Education</a>
+            <a href="#experience" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Experience</a>
+            <a href="#portfolio" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Portfolio</a>
+            <a href="#certificate" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Certificate</a>
+          </div>
+          <div class="md:hidden pr-2">
+            <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none flex flex-col justify-center items-center">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Caption header -->
-
-    <!-- About -->
-    <div class="bg-black py-4" id="about">
-      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <h1 class="text-3xl font-bold text-white">About</h1>
-        <br />
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full md:w-1/3 py-3 px-4">
-            <div class="img-place">
-              <div class="circle-bg"></div>
-              <br />
-              <img
-                alt="Profile image of Ahmad Arif Sultoni"
-                class="profile-img"
-                src="assets/img/pp2grey.png"
-              />
-            </div>
-          </div>
-          <div class="w-full md:w-2/3 py-3 px-4">
-            <h1 class="text-2xl font-bold text-white">Ahmad Arif Sultoni</h1>
-            <h2 class="text-lg font-bold text-white">AI Engineer</h2>
-            <br />
-            <p class="text-white text-left">
-              I am an AI Engineer with 2 years of experience in developing deep
-              learning and computer vision-based solutions. I have a great
-              interest in optimizing machine learning models for various tasks
-              such as object detection, segmentation, and image classification,
-              especially in the mining industry sector. With a strong background
-              in Python, TensorFlow, and PyTorch, I always strive to deliver the
-              best results in every project while remaining focused on efficient
-              use of resources. I enjoy working in a team and am open to
-              continuing to learn and develop in the field of AI, with the aim
-              of making a positive contribution in every available opportunity.
-            </p>
-            <br />
-            <ul class="list-disc pl-5 text-left">
-              <li><b>From:</b> Pemalang, Central Java, Indonesia</li>
-              <li><b>Lives In:</b> Jakarta, Indonesia</li>
-              <li><b>Age:</b> 25</li>
-              <li><b>Gender:</b> Male</li>
-            </ul>
-            <br />
-            <!-- Contact Section in About -->
-            <ul class="list-none text-white text-left">
-              <li>
-                <i class="fas fa-envelope"></i>
-                <a
-                  href="mailto:ahmadarifsultoni7@gmail.com"
-                  class="text-white hover:underline"
-                  >Email</a
-                >
-              </li>
-              <li>
-                <i class="fab fa-linkedin"></i>
-                <a
-                  href="https://www.linkedin.com/in/ahmad-arif-123210/"
-                  class="text-white hover:underline"
-                  >LinkedIn</a
-                >
-              </li>
-              <li>
-                <i class="fab fa-github"></i>
-                <a
-                  href="https://github.com/arifsoul"
-                  class="text-white hover:underline"
-                  >GitHub</a
-                >
-              </li>
-            </ul>
-          </div>
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="flex flex-col space-y-2 px-4 py-4">
+          <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">About</a>
+          <a href="#skills" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Skills</a>
+          <a href="#education" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Education</a>
+          <a href="#experience" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Experience</a>
+          <a href="#portfolio" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Portfolio</a>
+          <a href="#certificate" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">Certificate</a>
         </div>
       </div>
     </div>
-    <!-- End About -->
+  </nav>
+  <div id="mobile-overlay"></div>
 
-    <!-- Skills -->
-    <div class="bg-black py-4" id="skills">
-      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <h1 class="text-3xl font-bold text-white">Skills</h1>
-        <br />
-        <ul
-          class="list-disc text-white pl-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-        >
-          <li>Python</li>
-          <li>C++</li>
-          <li>TensorFlow</li>
-          <li>OpenCV</li>
-          <li>PyTorch</li>
-          <li>Linux</li>
-          <li>Google Colab</li>
-          <li>Google Cloud</li>
-          <li>SQL</li>
-          <li>NVIDIA Jetson</li>
-          <li>Natural Language Processing</li>
-          <li>Computer Vision</li>
-          <li>OCR</li>
-          <li>Image Processing</li>
-          <li>Embedded Systems</li>
-        </ul>
+  <!-- Hero Section -->
+  <section class="bg-gray-800 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/3 text-center">
+        <img src="assets/img/pp2grey.png" alt="Profile Picture" class="profile-pic mx-auto" />
+      </div>
+      <div class="md:w-2/3 mt-6 md:mt-0 text-center md:text-left">
+        <h1 class="text-4xl font-bold text-white">I'm <span id="name" class="text-blue-400"></span></h1>
+        <p id="typing-text-2" class="text-xl text-gray-300 mt-2"></p>
+        <p class="mt-4 text-gray-400">
+          I am an AI Engineer with over 3 years of experience in developing deep learning and computer vision-based solutions. I specialize in optimizing machine learning models for tasks such as object detection, segmentation, and image classification, particularly in the mining industry. With expertise in Python, TensorFlow, and PyTorch, I strive to deliver efficient, high-quality results in every project. I thrive in collaborative environments and am committed to continuous learning and contributing positively to AI advancements.
+        </p>
+        <div class="mt-4 text-gray-400">
+          <p><strong>From:</strong> Pemalang, Central Java, Indonesia</p>
+          <p><strong>Lives In:</strong> Jakarta, Indonesia</p>
+          <p><strong>Age:</strong> 25</p>
+          <p><strong>Gender:</strong> Male</p>
+        </div>
+        <div class="mt-6 flex justify-center md:justify-start space-x-4">
+          <a href="mailto:email@example.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://linkedin.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fab fa-github"></i> GitHub</a>
+        </div>
       </div>
     </div>
-    <!-- End Skills -->
+  </section>
 
-    <!-- Education -->
-    <div class="bg-black py-4" id="education">
-      <div class="container mx-auto px-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <h1 class="text-3xl font-bold text-white">Education</h1>
-        <br />
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full md:w-2/3 py-3 px-4">
-            <p class="text-white text-left font-bold">
-              <i class="fas fa-graduation-cap"></i>
-              Mechatronic Engineering Education 2022
-            </p>
-            <p>Universitas Negeri Yogyakarta - Bachelor's degree</p>
-            <p>GPA: 3.52</p>
-            <br />
-            <p class="text-white text-left">Essay:</p>
-            <p class="text-white text-left">
-              Development of Object Detection Prototype Using TensorFlow Object
-              Detection API and Google Colaboratory as Learning Media in Visual
-              Sensing Robot Course
-            </p>
-            <br />
-            <ul class="list-disc pl-5 text-left">
-              <li>
-                1st place Indonesian wheeled soccer Robot Contest at the
-                National Level (2021)
-              </li>
-              <li>
-                3rd place Indonesian wheeled soccer Robot Contest at the
-                National Level (2020)
-              </li>
-              <li>
-                2nd place Indonesian wheeled soccer Robot Contest at the
-                Regional Level (2019)
-              </li>
+  <!-- Skills Section -->
+  <section id="skills" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center">Skills</h2>
+      <div class="mt-8">
+        <h3 class="text-2xl font-semibold text-white">Hard Skills</h3>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Python</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">C++</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">TensorFlow</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">OpenCV</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">PyTorch</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Linux</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Google Colab</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Google Cloud</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">SQL</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">NVIDIA Jetson</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Natural Language Processing</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">RAG</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">LangChain</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Computer Vision</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">OCR</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Computer Operation</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Image Processing</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Image Classification</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Image Segmentation</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Object Detection</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">LLM</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Embedded System</div>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mt-8">Soft Skills</h3>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Creative</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Teamwork</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Willingness to Learn</div>
+          <div class="skill-card bg-gray-800 p-4 rounded-lg text-center">Flexibility</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center">Education</h2>
+      <div class="mt-8">
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-white">Mechatronic Engineering Education 2022</h3>
+          <p class="text-gray-300">Universitas Negeri Yogyakarta - Bachelor's degree</p>
+          <p class="text-gray-400">GPA: 3.52</p>
+          <p class="mt-2 text-gray-400"><strong>Essay:</strong> Development of Object Detection Prototype Using TensorFlow Object Detection API and Google Colaboratory as Learning Media in Visual Sensing Robot Course</p>
+          <ul class="mt-4 text-gray-400 list-disc list-inside">
+            <li>1st place Indonesian Wheeled Soccer Robot Contest at the National Level (2021)</li>
+            <li>3rd place Indonesian Wheeled Soccer Robot Contest at the National Level (2020)</li>
+            <li>2nd place Indonesian Wheeled Soccer Robot Contest at the Regional Level (2019)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center">Experience</h2>
+      <div class="mt-8 space-y-8">
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-white">Artificial Intelligence Engineer, PT. Safepedia Global Teknologi (04/2022 - Present)</h3>
+          <p class="text-gray-400">Duration: 3 years, 1 month (April 1, 2022 - May 14, 2025)</p>
+          <div class="mt-4">
+            <h4 class="text-lg font-semibold text-white">AI Core Logging - PT. Freeport Indonesia</h4>
+            <ul class="text-gray-400 list-disc list-inside">
+              <li>Developed a deep learning-based application for analyzing core photos from drilling operations.</li>
+              <li>Detected and analyzed key features on core images with segmentation and joint analysis.</li>
+              <li>Differentiated between natural and mechanical fractures based on images.</li>
+              <li>Built a user-friendly GUI to simplify input and user interaction.</li>
+              <li>Reduced RAM usage in processing deep learning models to improve performance.</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-lg font-semibold text-white">GeoAI - Mind ID</h4>
+            <ul class="text-gray-400 list-disc list-inside">
+              <li>Developed a mining land detection system using satellite imagery data and a custom YOLOv8-seg based segmentation model.</li>
+              <li>Measured mining area sizes with precise geospatial analysis.</li>
+              <li>Leveraged Google Colab, Makesense.AI, and segment-geospatial for data annotation, segmentation, and processing.</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-lg font-semibold text-white">Geologging - PT. Antam</h4>
+            <ul class="text-gray-400 list-disc list-inside">
+              <li>Built a quicklog application powered by deep learning for analyzing core photos from gold mining exploration.</li>
+              <li>Applied Detectron2 for core detection and segmentation, accelerating the geological logging process.</li>
+              <li>Developed deep learning application methods to increase effectiveness with limited resources.</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-lg font-semibold text-white">Grain Counting Analysis - PT. Timah</h4>
+            <ul class="text-gray-400 list-disc list-inside">
+              <li>Prepared a mineral rock image dataset to train a segmentation model with Detectron2.</li>
+              <li>Detected, counted rock types, and analyzed mineral content using predefined constants.</li>
+              <li>Optimized the model for resource efficiency and high accuracy in mineral analysis.</li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- End Education -->
-
-    <!-- Experience -->
-    <div class="bg-black py-4" id="experience">
-      <div class="container mx-auto px-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <h1 class="text-3xl font-bold text-white">Experience</h1>
-        <br />
-        <div class="flex flex-wrap -mx-4">
-          <div class="w-full md:w-2/3 py-3 px-4">
-            <ul class="list-disc pl-5">
-              <li>
-                <b
-                  >Artificial Intelligence Engineer, PT. Safepedia Global
-                  Teknologi (04/2022 - Present)</b
-                >
-                <ul class="list-disc pl-5">
-                  <li>
-                    <b>AI Core Logging - PT. Freeport Indonesia</b>
-                    <ul class="list-disc pl-5">
-                      <li>
-                        Developed a deep learning-based application for
-                        analyzing core photos from drilling operations.
-                      </li>
-                      <li>
-                        Detected and analyzed key features on core images with
-                        segmentation and joint analysis.
-                      </li>
-                      <li>
-                        Differentiated between natural and mechanical fractures
-                        based on images.
-                      </li>
-                      <li>
-                        Built a user-friendly GUI to simplify input and user
-                        interaction.
-                      </li>
-                      <li>
-                        Reduced RAM usage in processing deep learning models to
-                        improve performance.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>GeoAI - Mind ID</b>
-                    <ul class="list-disc pl-5">
-                      <li>
-                        Developed a mining land detection system using satellite
-                        imagery data and a custom YOLOv8-seg based segmentation
-                        model.
-                      </li>
-                      <li>
-                        Measured mining area sizes with precise geospatial
-                        analysis.
-                      </li>
-                      <li>
-                        Leveraged Google Colab, Makesense.AI, and
-                        segment-geospatial for data annotation, segmentation,
-                        and processing.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>Geologging - PT. Antam</b>
-                    <ul class="list-disc pl-5">
-                      <li>
-                        Built a quicklog application powered by deep learning
-                        for analyzing core photos from gold mining exploration.
-                      </li>
-                      <li>
-                        Applied Detectron2 for core detection and segmentation,
-                        accelerating the geological logging process.
-                      </li>
-                      <li>
-                        Developed deep learning application methods to increase
-                        effectiveness with limited resources.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>Grain Counting Analysis - PT. Timah</b>
-                    <ul class="list-disc pl-5">
-                      <li>
-                        Prepared a mineral rock image dataset to train a
-                        segmentation model with Detectron2.
-                      </li>
-                      <li>
-                        Detected, counted rock types, and analyzed mineral
-                        content using predefined constants.
-                      </li>
-                      <li>
-                        Optimized the model for resource efficiency and high
-                        accuracy in mineral analysis.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <br />
-              <li>
-                <b>Freelance Mentor, Indobot Academy (10/2021 - 01/2022)</b>
-                <ul class="list-disc pl-5">
-                  <li>
-                    Assisted students of all skill levels in core subjects,
-                    including programming and electronics.
-                  </li>
-                  <li>Delivered online course material about IoT.</li>
-                  <li>
-                    Trained adult learners in classes, workshops, and via remote
-                    learning programs.
-                  </li>
-                </ul>
-              </li>
-              <br />
-              <li>
-                <b
-                  >Computer Vision Programmer, UNY Robotics Team (10/2018 -
-                  10/2021)</b
-                >
-                <ul class="list-disc pl-5">
-                  <li>
-                    Developed an object detection system on a wheeled soccer
-                    robot using Python programming language, OpenCV library, and
-                    TensorFlow framework on Jetson Nano.
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-white">Freelance Mentor, Indobot Academy (10/2021 - 01/2022)</h3>
+          <ul class="text-gray-400 list-disc list-inside">
+            <li>Assisted students of all skill levels in core subjects, including programming and electronics.</li>
+            <li>Delivered online course material about IoT.</li>
+            <li>Trained adult learners in classes, workshops, and via remote learning programs.</li>
+          </ul>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-white">Computer Vision Programmer, UNY Robotics Team (10/2018 - 10/2021)</h3>
+          <ul class="text-gray-400 list-disc list-inside">
+            <li>Developed an object detection system on a wheeled soccer robot using Python programming language, OpenCV library, and TensorFlow framework on Jetson Nano.</li>
+          </ul>
         </div>
       </div>
     </div>
-    <!-- End Experience -->
+  </section>
 
-    <!-- Portfolio -->
-    <div class="bg-black py-4" id="portfolio">
-      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <div class="text-center">
-          <div
-            class="bg-black text-3xl font-bold text-white inline-block px-2 py-1 rounded"
-          >
-            Portfolio
-          </div>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center">Portfolio</h2>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/ai_core.png" alt="AI Core Logging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">AI Core Logging</h3>
+          <p class="text-gray-400">Core analysis with segmentation and joint analysis</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-3">
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Image of AI Core Logging project"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/ai_core.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">AI Core Logging</h5>
-              <p class="text-white">
-                Core analysis with segmentation and joint analysis
-              </p>
-              <a
-                href="https://github.com/arifsoul/ai-core-logging"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Image of GeoAI project"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/geoai1.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">GeoAI</h5>
-              <p class="text-white">Mining land detection using YOLOv8-seg</p>
-              <a
-                href="https://github.com/arifsoul/geoai"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Image of Geologging project"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/geologging2.jpg"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Geologging</h5>
-              <p class="text-white">
-                Quick log analysis for gold mining exploration
-              </p>
-              <a
-                href="https://github.com/arifsoul/geologging"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Image of Grain Counting Analysis project"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/gca2.jpg"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Grain Counting Analysis</h5>
-              <p class="text-white">
-                Rock type detection and mineral content analysis
-              </p>
-              <a
-                href="https://github.com/arifsoul/grain-counting-analysis"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Plants Segmentations"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/sam2.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Plants Segmentations</h5>
-              <p class="text-white">
-                Plants Segmentations and Classifications using SAM2 on sattelite
-                imagery
-              </p>
-              <a
-                href="https://github.com/arifsoul/sattelite_sam2_geospatial"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Automatic Plate Recognitions"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/alpr.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Automatic Plate Recognitions</h5>
-              <p class="text-white">
-                Automatic Plate Recognitions using ultimateALPR-SDK
-              </p>
-              <a
-                href="https://github.com/arifsoul/alpr"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Vehicles Counting"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/work/vehicle_counting.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Vehicles Counting</h5>
-              <p class="text-white">Vehicles Counting using YoloV11</p>
-              <a
-                href="https://github.com/arifsoul/vehicle_counting"
-                class="text-white hover:underline"
-                >View Project</a
-              >
-            </div>
-          </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/geoai1.png" alt="GeoAI" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">GeoAI</h3>
+          <p class="text-gray-400">Mining land detection using YOLOv8-seg</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/geologging2.jpg" alt="Geologging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Geologging</h3>
+          <p class="text-gray-400">Quick log analysis for gold mining exploration</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/gca2.jpg" alt="Grain Counting Analysis" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Grain Counting Analysis</h3>
+          <p class="text-gray-400">Rock type detection and mineral content analysis</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/sam2.png" alt="Plants Segmentations" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Plants Segmentations</h3>
+          <p class="text-gray-400">Plants Segmentations and Classifications using SAM2 on satellite imagery</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/alpr.png" alt="Automatic Plate Recognitions" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Automatic Plate Recognitions</h3>
+          <p class="text-gray-400">Automatic Plate Recognitions using ultimateALPR-SDK</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/vehicle_counting.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Vehicles Counting</h3>
+          <p class="text-gray-400">Vehicles Counting using YoloV11</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/rag.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">RAG Chatbot</h3>
+          <p class="text-gray-400">Leveraging RAG (Retrieval-Augmented Generation) for accurate and context-aware responses in AI-driven applications</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/frontend_gen.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Frontend Generator</h3>
+          <p class="text-gray-400">Frontend Generator html, css, js using deepseek r1</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img src="assets/img/work/marketplace_scraper.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+          <h3 class="text-lg font-semibold text-white mt-4">Marketplace Scraper</h3>
+          <p class="text-gray-400">Product scraper for website marketplace</p>
+          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
         </div>
       </div>
     </div>
-    <!-- End Portfolio -->
+  </section>
 
-    <!-- Certificates -->
-    <div class="bg-black py-4" id="certificate">
-      <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24">
-        <div class="text-center">
-          <div
-            class="bg-black text-3xl font-bold text-white inline-block px-2 py-1 rounded"
-          >
-            Certificates
-          </div>
+  <!-- Certificates Section -->
+  <section id="certificate" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center">Certificates</h2>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img alt="Google Cloud Big Data Certificate" class="w-full h-48 object-cover rounded portfolio-image cursor-pointer" src="assets/img/certificate/big_data.png" />
+          <h3 class="text-lg font-semibold text-white">Google Cloud Big Data</h3>
+          <p class="text-gray-400">Big Data and Machine Learning Fundamentals</p>
+          <a href="https://github.com/arifsoul/sertifikat/blob/main/big_data.pdf" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Certificate</a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-3">
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Google Cloud Big Data Certificate"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/certificate/big_data.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Google Cloud Big Data</h5>
-              <p class="text-white">
-                Big Data and Machine Learning Fundamentals
-              </p>
-              <a
-                href="https://github.com/arifsoul/sertifikat/blob/main/big_data.pdf"
-                class="text-white hover:underline"
-                >View Certificate</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Getting Started with AI Certificate"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/certificate/getting_started.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Getting Started with AI</h5>
-              <p class="text-white">NVIDIA Jetson Nano</p>
-              <a
-                href="https://learn.nvidia.com/certificates?id=acfd253445874c06944cb3f0ab7ac6a1"
-                class="text-white hover:underline"
-                >View Certificate</a
-              >
-            </div>
-          </div>
-          <div class="bg-black p-4 rounded shadow">
-            <img
-              alt="Jetson AI Specialist Certificate"
-              class="w-full h-48 object-cover rounded portfolio-image cursor-pointer"
-              src="assets/img/certificate/jetson_ai_specialist.png"
-            />
-            <div class="mt-2">
-              <h5 class="text-white font-bold">Jetson AI Specialist</h5>
-              <p class="text-white">NVIDIA AI Specialist</p>
-              <a
-                href="https://github.com/arifsoul/sertifikat/blob/main/embedded-digital-jetson-ai-specialist-certificate-generation-1471313-Ahmad-Arif-Sultoni.pdf"
-                class="text-white hover:underline"
-                >View Certificate</a
-              >
-            </div>
-          </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img alt="Getting Started with AI Certificate" class="w-full h-48 object-cover rounded portfolio-image cursor-pointer" src="assets/img/certificate/getting_started.png" />
+          <h3 class="text-lg font-semibold text-white">Getting Started with AI</h3>
+          <p class="text-gray-400">NVIDIA Jetson Nano</p>
+          <a href="https://learn.nvidia.com/certificates?id=acfd253445874c06944cb3f0ab7ac6a1" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Certificate</a>
+        </div>
+        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+          <img alt="Jetson AI Specialist Certificate" class="w-full h-48 object-cover rounded portfolio-image cursor-pointer" src="assets/img/certificate/jetson_ai_specialist.png" />
+          <h3 class="text-lg font-semibold text-white">Jetson AI Specialist</h3>
+          <p class="text-gray-400">NVIDIA AI Specialist</p>
+          <a href="https://github.com/arifsoul/sertifikat/blob/main/embedded-digital-jetson-ai-specialist-certificate-generation-1471313-Ahmad-Arif-Sultoni.pdf" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Certificate</a>
         </div>
       </div>
     </div>
-    <!-- End Certificates -->
+  </section>
 
-    <!-- Footer -->
-    <div class="bg-black py-4">
-      <div class="container mx-auto">
-        <div class="text-center mt-4">
-          <p class="text-white">
-            &copy; 2025. All rights reserved | Made with
-            <i class="fas fa-heart text-red-500"></i>
-            by Ahmad Arif
-          </p>
-        </div>
-      </div>
+  <!-- Image Modal -->
+  <div id="imageModal">
+    <span id="closeModal">×</span>
+    <img id="modalImage" alt="Modal Image" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-400">© 2025. All rights reserved | Made with <i class="fas fa-heart text-red-500"></i> by Ahmad Arif</p>
     </div>
-    <!-- End Footer -->
+  </footer>
 
-    <!-- Modal for Image Zoom -->
-    <div
-      id="imageModal"
-      class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50"
-    >
-      <img
-        id="modalImage"
-        class="max-w-full max-h-full rounded"
-        alt="Zoomed Image"
-      />
-      <button
-        id="closeModal"
-        class="absolute top-4 right-4 text-white text-3xl font-bold cursor-pointer"
-      >
-        &times;
-      </button>
-    </div>
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- JavaScript for Typing Effect, Modal, and Mobile Menu -->
+  <script>
+    const typingText = document.getElementById("typing-text");
+    const typingText2 = document.getElementById("typing-text-2");
+    const name = document.getElementById("name");
 
-    <script>
-      const typingText = document.getElementById("typing-text");
-      const typingText2 = document.getElementById("typing-text-2");
-      const name = document.getElementById("name");
+    const text = "Ahmad Arif Sultoni";
+    const text2 = "AI Engineer";
 
-      const text = "Ahmad Arif Sultoni";
-      const text2 = "AI Engineer";
+    let index = 0;
+    let index2 = 0;
 
-      let index = 0;
-      let index2 = 0;
-
-      function typing() {
-        if (index < text.length) {
-          name.textContent += text[index];
-          index++;
-          setTimeout(typing, 50);
-        }
+    function typing() {
+      if (index < text.length) {
+        name.textContent += text[index];
+        index++;
+        setTimeout(typing, 50);
       }
+    }
 
-      function typing2() {
-        if (index2 < text2.length) {
-          typingText2.textContent += text2[index2];
-          index2++;
-          setTimeout(typing2, 50);
-        }
+    function typing2() {
+      if (index2 < text2.length) {
+        typingText2.textContent += text2[index2];
+        index2++;
+        setTimeout(typing2, 50);
       }
+    }
 
-      typing();
-      typing2();
+    typing();
+    setTimeout(typing2, text.length * 50 + 500); // Start typing2 after typing1 finishes
 
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const mobileMenu = document.getElementById("mobile-menu");
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileOverlay = document.getElementById("mobile-overlay");
 
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+
+    // Close mobile menu when clicking outside
+    mobileOverlay.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+      menuToggle.classList.remove("active");
+    });
+
+    // JavaScript to handle image modal
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const closeModal = document.getElementById("closeModal");
+
+      // Add click event to all portfolio images
+      document.querySelectorAll(".portfolio-image").forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImage.src = img.src; // Set modal image source
+          modal.classList.add("active"); // Show modal
+        });
       });
 
-      // JavaScript to handle image modal
-      document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("imageModal");
-        const modalImage = document.getElementById("modalImage");
-        const closeModal = document.getElementById("closeModal");
+      // Close modal when clicking on the close button
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("active"); // Hide modal
+      });
 
-        // Add click event to all portfolio/certificate images
-        document.querySelectorAll(".portfolio-image").forEach((img) => {
-          img.addEventListener("click", () => {
-            modalImage.src = img.src; // Set modal image source
-            modal.classList.add("active"); // Show modal
-          });
-        });
-
-        // Close modal when clicking on the close button
-        closeModal.addEventListener("click", () => {
+      // Close modal when clicking outside the image
+      modal.addEventListener("click", (e) => {
+        if (e.target !== modalImage) {
           modal.classList.remove("active"); // Hide modal
-        });
-
-        // Close modal when clicking outside the image
-        modal.addEventListener("click", (e) => {
-          if (e.target !== modalImage) {
-            modal.classList.remove("active"); // Hide modal
-          }
-        });
+        }
       });
-      // Tambahkan event listener untuk tombol ESC
+
+      // Close modal when pressing ESC
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-          // Keluar dari zoom
-          document.getElementById("imageModal").classList.remove("active");
+          modal.classList.remove("active");
         }
       });
-
-      // Tambahkan event listener untuk klik foto
-      document.querySelectorAll(".portfolio-image").forEach(function (img) {
-        img.addEventListener("click", function () {
-          // Tambahkan kelas zoom
-          document.getElementById("imageModal").classList.add("active");
-          document.getElementById("modalImage").src = img.src;
-        });
-      });
-
-      // Tambahkan event listener untuk klik luar foto
-      document
-        .getElementById("imageModal")
-        .addEventListener("click", function (event) {
-          if (event.target !== document.getElementById("modalImage")) {
-            // Keluar dari zoom
-            document.getElementById("imageModal").classList.remove("active");
-          }
-        });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
