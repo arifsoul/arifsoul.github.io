@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Font Awesome 6 Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .profile-pic {
       width: 200px;
@@ -153,18 +155,23 @@
         <h1 class="text-4xl font-bold text-white">I'm <span id="name" class="text-blue-400"></span></h1>
         <p id="typing-text-2" class="text-xl text-gray-300 mt-2"></p>
         <p class="mt-4 text-gray-400">
-          I am an AI Engineer with over 3 years of experience in developing deep learning and computer vision-based solutions. I specialize in optimizing machine learning models for tasks such as object detection, segmentation, and image classification, particularly in the mining industry. With expertise in Python, TensorFlow, and PyTorch, I strive to deliver efficient, high-quality results in every project. I thrive in collaborative environments and am committed to continuous learning and contributing positively to AI advancements.
+          I am an AI Engineer with <span id="expert"></span> years of experience in designing and deploying deep learning solutions. 
+          Specialized in optimizing models for industrial applications, particularly in the mining sector, with expertise in object detection, segmentation, and image classification.
+          Proficient in Python, TensorFlow, and PyTorch, with a strong focus on streamlining AI workflows for resource efficiency and
+          scalability. Passionate about bridging cutting-edge research with real-world implementation, including generative AI and RAG
+          for LLMs. Proven ability to deliver robust vision-based systems for challenging industrial environments. A collaborative team
+          player committed to continuous learning and solving complex problems through innovative AI/ML solutions.
         </p>
         <div class="mt-4 text-gray-400">
           <p><strong>From:</strong> Pemalang, Central Java, Indonesia</p>
           <p><strong>Lives In:</strong> Jakarta, Indonesia</p>
-          <p><strong>Age:</strong> 25</p>
+          <p><b>Age:</b> <span id="age"></span></p>
           <p><strong>Gender:</strong> Male</p>
         </div>
         <div class="mt-6 flex justify-center md:justify-start space-x-4">
-          <a href="mailto:email@example.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://linkedin.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com" class="text-blue-400 hover:text-blue-300 transition duration-300"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:email@example.com" class="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://linkedin.com" class="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com" class="text-blue-400 hover:text-blue-300 transition duration-300" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
     </div>
@@ -217,8 +224,8 @@
       <h2 class="text-3xl font-bold text-white text-center">Education</h2>
       <div class="mt-8">
         <div class="bg-gray-700 p-6 rounded-lg">
-          <h3 class="text-xl font-semibold text-white">Mechatronic Engineering Education 2022</h3>
-          <p class="text-gray-300">Universitas Negeri Yogyakarta - Bachelor's degree</p>
+          <h3 class="text-xl font-semibold text-white">Mechatronic Engineering Education (08/2017 - 02/2022)</h3>
+          <p class="mt-2 text-gray-300">Universitas Negeri Yogyakarta - Bachelor's degree</p>
           <p class="text-gray-400">GPA: 3.52</p>
           <p class="mt-2 text-gray-400"><strong>Essay:</strong> Development of Object Detection Prototype Using TensorFlow Object Detection API and Google Colaboratory as Learning Media in Visual Sensing Robot Course</p>
           <ul class="mt-4 text-gray-400 list-disc list-inside">
@@ -296,67 +303,73 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-white text-center">Portfolio</h2>
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/ai_core.png" alt="AI Core Logging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">AI Core Logging</h3>
-          <p class="text-gray-400">Core analysis with segmentation and joint analysis</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/geoai1.png" alt="GeoAI" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">GeoAI</h3>
-          <p class="text-gray-400">Mining land detection using YOLOv8-seg</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/geologging2.jpg" alt="Geologging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Geologging</h3>
-          <p class="text-gray-400">Quick log analysis for gold mining exploration</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/gca2.jpg" alt="Grain Counting Analysis" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Grain Counting Analysis</h3>
-          <p class="text-gray-400">Rock type detection and mineral content analysis</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/sam2.png" alt="Plants Segmentations" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Plants Segmentations</h3>
-          <p class="text-gray-400">Plants Segmentations and Classifications using SAM2 on satellite imagery</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/alpr.png" alt="Automatic Plate Recognitions" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Automatic Plate Recognitions</h3>
-          <p class="text-gray-400">Automatic Plate Recognitions using ultimateALPR-SDK</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/vehicle_counting.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Vehicles Counting</h3>
-          <p class="text-gray-400">Vehicles Counting using YoloV11</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/rag.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">RAG Chatbot</h3>
-          <p class="text-gray-400">Leveraging RAG (Retrieval-Augmented Generation) for accurate and context-aware responses in AI-driven applications</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/frontend_gen.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Frontend Generator</h3>
-          <p class="text-gray-400">Frontend Generator html, css, js using deepseek r1</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
-        <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
-          <img src="assets/img/work/marketplace_scraper.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
-          <h3 class="text-lg font-semibold text-white mt-4">Marketplace Scraper</h3>
-          <p class="text-gray-400">Product scraper for website marketplace</p>
-          <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
-        </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/ai_core.png" alt="AI Core Logging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">AI Core Logging</h3>
+        <p class="text-gray-400">Revolutionizing drilling analysis with deep learning-powered segmentation and joint analysis for precise core photo insights.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
       </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/geoai1.png" alt="GeoAI" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">GeoAI</h3>
+        <p class="text-gray-400">Transforming mining with YOLOv8-seg: Accurate land detection and geospatial analysis from satellite imagery.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/geologging2.jpg" alt="Geologging" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Geologging</h3>
+        <p class="text-gray-400">Accelerating gold mining exploration with rapid, deep learning-driven core photo analysis using Detectron2.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/gca2.jpg" alt="Grain Counting Analysis" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Grain Counting Analysis</h3>
+        <p class="text-gray-400">Unlocking mineral insights with Detectron2: Precise rock type detection and efficient mineral content analysis.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/sam2.png" alt="Plants Segmentations" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Plants Segmentations</h3>
+        <p class="text-gray-400">Empowering agriculture with SAM2: Advanced plant segmentation and classification from high-resolution satellite imagery.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/alpr.png" alt="Automatic Plate Recognitions" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Automatic Plate Recognitions</h3>
+        <p class="text-gray-400">Streamlining vehicle identification with ultimateALPR-SDK: Robust and accurate license plate recognition.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/vehicle_counting.png" alt="Vehicles Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Vehicles Counting</h3>
+        <p class="text-gray-400">Enhancing traffic monitoring with YOLOv11: Real-time, high-precision vehicle detection and counting.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/rag.png" alt="RAG Chatbot" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">RAG Chatbot</h3>
+        <p class="text-gray-400">Revolutionizing AI conversations with RAG: Delivering precise, context-rich responses for smarter interactions.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/frontend_gen.png" alt="Frontend Generator" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Frontend Generator</h3>
+        <p class="text-gray-400">Automating web development with DeepSeek R1: Generating dynamic HTML, CSS, and JS frontends effortlessly.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/marketplace_scraper.png" alt="Marketplace Scraper" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Marketplace Scraper</h3>
+        <p class="text-gray-400">Empowering e-commerce insights with a robust scraper for extracting product data from marketplace websites.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+      <div class="portfolio-card bg-gray-700 p-4 rounded-lg">
+        <img src="assets/img/work/fruit_counting.png" alt="Fruit Counting" class="portfolio-image w-full h-48 object-cover rounded-md cursor-pointer" />
+        <h3 class="text-lg font-semibold text-white mt-4">Fruit Counting</h3>
+        <p class="text-gray-400">Optimizing agriculture with YOLOv11 and Kalman filter: Accurate, real-time fruit detection and counting.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 mt-2 inline-block transition duration-300">View Project</a>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -396,7 +409,7 @@
   <!-- Footer -->
   <footer class="bg-gray-800 py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400">© 2025. All rights reserved | Made with ❤️ by Ahmad Arif</p>
+      <p class="text-gray-400">© 2025. All rights reserved | Made with ❤️‍🔥 by Ahmad Arif</p>
     </div>
   </footer>
 
@@ -486,6 +499,21 @@
         }
       });
     });
+
+    function calculateAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
+  const birthDate = new Date('1999-10-18');
+  document.getElementById('age').textContent = calculateAge(birthDate);
+  const Expert = new Date('2022-04-01');
+  document.getElementById('expert').textContent = calculateAge(Expert);
   </script>
 </body>
 </html>
