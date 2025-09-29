@@ -1,2 +1,0 @@
-# arifsoul.io
-Personal Website
