@@ -129,10 +129,11 @@
             background-color: #F9FAFB; /* gray-50 */
             color: #1F2937; /* gray-800 */
         }
-        .light .text-white { color: #111827; /* gray-900 */ }
-        .light .text-gray-300 { color: #4B5563; /* gray-600 */ }
-        .light .text-gray-400 { color: #6B7280; /* gray-500 */ }
-        .light .text-gray-500 { color: #6B7280; /* gray-500 */ }
+        .light .text-white { color: #111827 !important; /* gray-900 */ }
+        .light .text-gray-200 { color: #374151 !important; /* gray-700 */ }
+        .light .text-gray-300 { color: #4B5563 !important; /* gray-600 */ }
+        .light .text-gray-400 { color: #6B7280 !important; /* gray-500 */ }
+        .light .text-gray-500 { color: #6B7280 !important; /* gray-500 */ }
         .light .hover\:text-white:hover { color: #000000 !important; }
 
         .light .glass-effect {
@@ -148,7 +149,8 @@
             border-bottom-color: #D1D5DB; /* gray-300 */
         }
         .light .nav-link::after { background-color: #111827; }
-        .light .timeline-item::before { border-color: #F9FAFB; }
+        .light .timeline-item::before { border-color: #F9FAFB; background-color: #6B7280; }
+        .light .timeline-item:hover::before { background-color: #111827; }
         .light .timeline-item-content:hover { border-color: #D1D5DB; }
         .light .border-gray-700 { border-color: #E5E7EB; }
         .light .border-gray-800 { border-color: #D1D5DB; }
@@ -173,6 +175,24 @@
         }
         .light #theme-toggle-btn { color: #1F2937; }
 
+        /* --- HERO PROFILE "HOLE" EFFECT --- */
+        .hero-hole {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 105%;
+            height: 50%;
+            background-color: #F9FAFB; /* Light color for dark mode */
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            z-index: 5;
+            transition: background-color 0.3s;
+        }
+        .light .hero-hole {
+            background-color: #1F2937; /* Dark color for light mode */
+        }
+
         /* --- COMMON STYLES --- */
         #project-modal { transition: opacity 0.3s ease; }
         #project-modal.hidden { opacity: 0; pointer-events: none; }
@@ -190,7 +210,20 @@
         .download-btn { padding: 10px 20px; border-radius: 8px; font-weight: 600; }
         .hero-profile-img { transform: translate(-50%, 95%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .hero-profile-img.is-visible { transform: translate(-50%, 0); }
-        .skills-slider { display: flex; overflow-x: scroll; cursor: grab; user-select: none; scrollbar-width: none; -ms-overflow-style: none; }
+        
+        /* --- SKILLS SLIDER --- */
+        .skills-slider-container {
+            position: relative;
+            overflow: hidden; /* This hides the non-visible parts of the slider */
+        }
+        .skills-slider { 
+            display: flex; 
+            overflow-x: scroll;
+            cursor: grab; 
+            user-select: none;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
         .skills-slider::-webkit-scrollbar { display: none; }
         .skills-slider.grabbing { cursor: grabbing; }
     </style>
@@ -246,7 +279,8 @@
         
         <section id="hero" class="text-center pt-16 pb-24">
              <div class="relative w-48 h-48 mx-auto mb-6 overflow-hidden">
-                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-24 bg-transparent rounded-t-full"></div>
+                <!-- The "Hole" Effect Object -->
+                <div class="hero-hole"></div>
                 <img src="assets/img/pp2grey.png" 
                      onerror="this.onerror=null;this.src='https://placehold.co/170x220/111111/E5E7EB?text=AAS';" 
                      alt="Ahmad Arif Sultoni" 
@@ -382,7 +416,7 @@
                 <div class="text-center mb-12">
                     <h3 class="section-title" data-lang-id="Keahlian Teknologi" data-lang-en="Tech Stack">Keahlian Teknologi</h3>
                 </div>
-                <div class="glass-effect p-8 rounded-xl max-w-5xl mx-auto">
+                <div class="glass-effect p-8 rounded-xl max-w-5xl mx-auto skills-slider-container">
                     <div class="skills-slider">
                          <span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Python</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Tensorflow</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">PyTorch</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Computer Vision</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">OpenCV</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">RAG</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">LangChain</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">FastAPI</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Docker</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">MLflow</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Ultralytics</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Hugging Face</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Nvidia Jetson</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Google Cloud</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">SQL</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">Streamlit</span><span class="skill-tag text-sm font-medium px-4 py-2 rounded-full mr-3">ReactJS</span>
                     </div>
@@ -606,8 +640,6 @@
                 applyTheme(newTheme);
             });
 
-            // --- END THEME TOGGLE LOGIC ---
-
             function handleScroll() {
                 if (window.scrollY > 20) {
                     header.classList.add('header-glass');
@@ -693,17 +725,13 @@
                 document.body.style.position = 'fixed';
                 document.body.style.top = `-${scrollYPosition}px`;
                 document.body.style.width = '100%';
-
                 const lang = document.documentElement.lang;
                 modalTitle.textContent = lang === 'en' ? card.dataset.titleEn : card.dataset.titleId;
                 modalDescription.textContent = lang === 'en' ? card.dataset.descEn : card.dataset.descId;
-                
                 modalMainImage.src = ''; 
                 modalThumbnailsContainer.innerHTML = ''; 
-
                 const images = card.dataset.images.split(',');
                 if (images.length > 0 && images[0]) modalMainImage.src = images[0]; 
-
                 images.forEach((imgSrc, index) => {
                     if (!imgSrc) return;
                     const thumb = document.createElement('img');
@@ -719,7 +747,6 @@
                     });
                     modalThumbnailsContainer.appendChild(thumb);
                 });
-
                 modalTechStack.innerHTML = '';
                 const techs = card.dataset.tech.split(',');
                 techs.forEach(tech => {
@@ -729,7 +756,6 @@
                     techTag.textContent = tech;
                     modalTechStack.appendChild(techTag);
                 });
-                
                 modal.classList.remove('hidden');
             }
 
@@ -760,17 +786,56 @@
             function initSkillsSlider() {
                 const slider = document.querySelector('.skills-slider');
                 if (!slider) return;
-                let isDown = false, startX, scrollLeft;
-                const start = (e) => { isDown = true; slider.classList.add('grabbing'); startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft; scrollLeft = slider.scrollLeft; };
-                const end = () => { isDown = false; slider.classList.remove('grabbing'); };
-                const move = (e) => { if (!isDown) return; e.preventDefault(); const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft; const walk = (x - startX) * 2; slider.scrollLeft = scrollLeft - walk; };
-                slider.addEventListener('mousedown', start);
-                slider.addEventListener('mouseleave', end);
-                slider.addEventListener('mouseup', end);
-                slider.addEventListener('mousemove', move);
-                slider.addEventListener('touchstart', start);
-                slider.addEventListener('touchend', end);
-                slider.addEventListener('touchmove', move);
+
+                // Gandakan konten untuk efek loop yang mulus
+                const content = Array.from(slider.children);
+                content.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    clone.setAttribute('aria-hidden', 'true');
+                    slider.appendChild(clone);
+                });
+
+                let animationFrameId;
+                let isHovering = false;
+
+                const autoScroll = () => {
+                    if (!isHovering) {
+                        slider.scrollLeft += 0.5; // Atur kecepatan scroll di sini
+                        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                            slider.scrollLeft = 0;
+                        }
+                    }
+                    animationFrameId = requestAnimationFrame(autoScroll);
+                };
+
+                slider.addEventListener('mouseenter', () => isHovering = true);
+                slider.addEventListener('mouseleave', () => isHovering = false);
+                
+                // Logika drag-to-scroll yang sudah ada
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('grabbing');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('grabbing');
+                });
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+                
+                // Mulai animasi
+                animationFrameId = requestAnimationFrame(autoScroll);
             }
             
             function initFullscreenViewer() { /* ... full implementation ... */ }
