@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Arif Sultoni - AI Engineer Portfolio</title>
+    <title>Ahmad Arif Sultoni - Artificial Intelligence Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,9 @@
             background-color: #000000;
             color: #D1D5DB;
             transition: background-color 0.3s, color 0.3s;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
         .glass-effect {
             background: rgba(17, 17, 17, 0.6);
@@ -128,6 +131,8 @@
         .light body {
             background-color: #F9FAFB; /* gray-50 */
             color: #1F2937; /* gray-800 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
         }
         .light .text-white { color: #111827 !important; /* gray-900 */ }
         .light .text-gray-200 { color: #374151 !important; /* gray-700 */ }
@@ -158,7 +163,12 @@
             background-color: rgba(229, 231, 235, 0.4); /* gray-200 */
             border-color: #D1D5DB; /* gray-300 */
         }
+        .light .download-btn {
+            background-color: #111827;
+            color: #F9FAFB;
+        }
         .light .download-btn:hover {
+            background-color: transparent;
             color: #111827;
             border-color: #111827;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -227,6 +237,14 @@
         .skills-slider::-webkit-scrollbar { display: none; }
         .skills-slider.grabbing { cursor: grabbing; }
     </style>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            const theme = savedTheme || (prefersLight ? 'light' : 'dark');
+            if (theme === 'light') document.documentElement.classList.add('light');
+        })();
+    </script>
 </head>
 
 <body class="antialiased">
@@ -287,7 +305,7 @@
                      class="absolute bottom-0 left-1/2 h-[110%] w-auto z-10 hero-profile-img">
             </div>
             <h1 class="text-5xl font-bold text-white">Ahmad Arif Sultoni</h1>
-            <h2 class="text-2xl font-medium text-gray-300 mt-2" data-lang-id="AI Engineer & Computer Vision Specialist" data-lang-en="AI Engineer & Computer Vision Specialist">AI Engineer & Computer Vision Specialist</h2>
+            <h2 class="text-2xl font-medium text-gray-300 mt-2" data-lang-id="Artificial Intelligence Engineer & Computer Vision Specialist" data-lang-en="Artificial Intelligence Engineer & Computer Vision Specialist">Artificial Intelligence Engineer & Computer Vision Specialist</h2>
             <p class="max-w-2xl mx-auto mt-4 text-gray-400" data-lang-id="Menjembatani penelitian mutakhir dengan implementasi dunia nyata, memberikan solusi AI yang kuat untuk lingkungan industri yang menantang." data-lang-en="Bridging cutting-edge research with real-world implementation, delivering robust AI solutions for challenging industrial environments.">
                 Menjembatani penelitian mutakhir dengan implementasi dunia nyata, memberikan solusi AI yang kuat untuk lingkungan industri yang menantang.
             </p>
@@ -315,13 +333,13 @@
                 </div>
                 <div class="glass-effect p-8 rounded-xl max-w-5xl mx-auto">
                     <div>
-                        <p class="text-base leading-relaxed mb-6" data-lang-id="AI Engineer dengan pengalaman profesional 3+ tahun dalam merancang dan menerapkan solusi deep learning, didukung oleh lebih dari 4 tahun pengembangan langsung dalam machine learning dan computer vision. Spesialisasi dalam mengoptimalkan model untuk aplikasi industri, khususnya di sektor pertambangan." data-lang-en="An AI Engineer with 3+ years of professional experience in designing and deploying deep learning solutions, backed by over 4 years of hands-on development in machine learning and computer vision. I specialize in optimizing models for industrial applications, particularly in the mining sector.">
-                            AI Engineer dengan pengalaman profesional 3+ tahun dalam merancang dan menerapkan solusi deep learning, didukung oleh lebih dari 4 tahun pengembangan langsung dalam machine learning dan computer vision. Spesialisasi dalam mengoptimalkan model untuk aplikasi industri, khususnya di sektor pertambangan.
+                        <p class="text-base leading-relaxed mb-6" data-lang-id="Artificial Intelligence Engineer dengan pengalaman profesional 4+ tahun dalam merancang dan menerapkan solusi deep learning, didukung oleh lebih dari 4 tahun pengembangan langsung dalam machine learning dan computer vision. Spesialisasi dalam mengoptimalkan model untuk aplikasi industri, khususnya di sektor pertambangan." data-lang-en="An Artificial Intelligence Engineer with 4+ years of professional experience in designing and deploying deep learning solutions, backed by over 4 years of hands-on development in machine learning and computer vision. I specialize in optimizing models for industrial applications, particularly in the mining sector.">
+                            Artificial Intelligence Engineer dengan pengalaman profesional 3+ tahun dalam merancang dan menerapkan solusi deep learning, didukung oleh lebih dari 4 tahun pengembangan langsung dalam machine learning dan computer vision. Spesialisasi dalam mengoptimalkan model untuk aplikasi industri, khususnya di sektor pertambangan.
                         </p>
                         
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 text-center">
                             <div class="stat-card">
-                                <span class="text-2xl font-bold text-white block">3+</span>
+                                <span class="text-2xl font-bold text-white block">4+</span>
                                 <span class="text-xs text-gray-400" data-lang-id="Tahun Pengalaman" data-lang-en="Years Experience">Tahun Pengalaman</span>
                             </div>
                             <div class="stat-card">
@@ -353,7 +371,7 @@
                             </div>
                         </div>
 
-                        <a href="https://docs.google.com/document/d/1G6-N8BoGz9nm1HGVvMsZayP8UbX0wJUm5i2JlZTbpx4/edit?usp=sharing" download="Ahmad_Arif_Sultoni_CV_AI_Engineer.pdf" class="download-btn inline-flex items-center gap-2">
+                        <a href="assets/cv/Ahmad_Arif_Sultoni_CV.pdf" download="Ahmad_Arif_Sultoni_CV.pdf" class="download-btn inline-flex items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                             <span data-lang-id="Unduh CV" data-lang-en="Download CV">Unduh CV</span>
                         </a>
@@ -390,7 +408,7 @@
                                     <img src="assets/img/certificate/getting_started.png" onerror="this.onerror=null;this.src='https://placehold.co/128x80/111827/9CA3AF?text=Nvidia';" alt="Sertifikat Nvidia" class="w-24 h-auto object-cover rounded-md border border-gray-700">
                                     <div class="flex-1">
                                         <p class="font-semibold text-gray-200 text-sm">Nvidia: Getting Started With AI on Jetson Nano</p>
-                                        <a href="https://learn.nvidia.com/certificates?id=acfd253445874c06944cb3f0ab7ac6a1" target="_blank" class="download-btn text-xs px-3 py-1 mt-1 inline-flex items-center gap-1">
+                                        <a href="https://github.com/arifsoul/sertifikat/blob/main/DLI%20S-RX-02%20Certificate%20_%20Deep%20Learning%20Institute.pdf" target="_blank" class="download-btn text-xs px-3 py-1 mt-1 inline-flex items-center gap-1">
                                             <span data-lang-id="Kunjungi" data-lang-en="Visit">Kunjungi</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                         </a>
@@ -432,8 +450,16 @@
                         <div class="relative pl-10 timeline-item">
                             <div class="p-6 rounded-lg glass-effect timeline-item-content">
                                 <h4 class="font-bold text-xl text-white">Artificial Intelligence Engineer</h4>
+                                <span class="text-md font-medium text-gray-300">Zapvision.ai</span>
+                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Mei 2026 - Sekarang" data-lang-en="May 2026 - Present">Mei 2026 - Sekarang</span> · <span class="exp-duration" data-start="2026-05-01"></span></p>
+                                <p class="text-sm" data-lang-id="Membangun platform AI computer vision end-to-end, serta mengembangkan dan menerapkan solusi pada perangkat edge seperti Orange Pi dan Raspberry Pi." data-lang-en="Building an end-to-end AI computer vision platform, and developing and deploying solutions on edge devices such as Orange Pi and Raspberry Pi.">Membangun platform AI computer vision end-to-end, serta mengembangkan dan menerapkan solusi pada perangkat edge seperti Orange Pi dan Raspberry Pi.</p>
+                            </div>
+                        </div>
+                        <div class="relative pl-10 timeline-item">
+                            <div class="p-6 rounded-lg glass-effect timeline-item-content">
+                                <h4 class="font-bold text-xl text-white">Artificial Intelligence Engineer</h4>
                                 <a href="https://safepedia.com/" target="_blank" class="text-md font-medium text-gray-300 hover:text-white">PT. Safepedia Global Teknologi</a>
-                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Apr 2022 - Sekarang" data-lang-en="Apr 2022 - Present">Apr 2022 - Sekarang</span> · <span id="experience-duration"></span></p>
+                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Apr 2022 - Apr 2026" data-lang-en="Apr 2022 - Apr 2026">Apr 2022 - Apr 2026</span> · <span class="exp-duration" data-start="2022-04-01" data-end="2026-04-30"></span></p>
                                 <p class="text-sm" data-lang-id="Merancang dan menerapkan solusi deep learning untuk industri pertambangan. Proyek utama meliputi analisis geologi, deteksi lahan via satelit, analisis mineral, dan membangun platform analitik Text-to-SQL." data-lang-en="Designed and deployed deep learning solutions for the mining industry. Key projects include geological analysis, satellite-based land detection, mineral analysis, and building a Text-to-SQL analytics platform.">Merancang dan menerapkan solusi deep learning untuk industri pertambangan. Proyek utama meliputi analisis geologi, deteksi lahan via satelit, analisis mineral, dan membangun platform analitik Text-to-SQL.</p>
                             </div>
                         </div>
@@ -441,7 +467,7 @@
                              <div class="p-6 rounded-lg glass-effect timeline-item-content">
                                 <h4 class="font-bold text-xl text-white">Freelance AI Developer</h4>
                                 <a href="#" class="text-md font-medium text-gray-300 hover:text-white">Recyclorobo.ai</a>
-                                <p class="text-sm text-gray-500 mb-3" data-lang-id="Feb 2024 - Mar 2024" data-lang-en="Feb 2024 - Mar 2024">Feb 2024 - Mar 2024</p>
+                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Feb 2024 - Mar 2024" data-lang-en="Feb 2024 - Mar 2024">Feb 2024 - Mar 2024</span> · <span class="exp-duration" data-start="2024-02-01" data-end="2024-03-31"></span></p>
                                 <p class="text-sm" data-lang-id="Mengembangkan model computer vision kustom untuk sistem pemilahan sampah. Mengintegrasikan MLflow dan menerapkan AMP untuk mempercepat pelatihan." data-lang-en="Developed custom computer vision models for waste sorting systems. Integrated MLflow and applied AMP to accelerate training.">Mengembangkan model computer vision kustom untuk sistem pemilahan sampah. Mengintegrasikan MLflow dan menerapkan AMP untuk mempercepat pelatihan.</p>
                             </div>
                         </div>
@@ -449,7 +475,7 @@
                             <div class="p-6 rounded-lg glass-effect timeline-item-content">
                                 <h4 class="font-bold text-xl text-white">Freelance Mentor</h4>
                                 <a href="https://indobot.co.id/" target="_blank" class="text-md font-medium text-gray-300 hover:text-white">Indobot Academy</a>
-                                <p class="text-sm text-gray-500 mb-3" data-lang-id="Okt 2021 - Jan 2022" data-lang-en="Oct 2021 - Jan 2022">Okt 2021 - Jan 2022</p>
+                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Okt 2021 - Jan 2022" data-lang-en="Oct 2021 - Jan 2022">Okt 2021 - Jan 2022</span> · <span class="exp-duration" data-start="2021-10-01" data-end="2022-01-31"></span></p>
                                 <p class="text-sm" data-lang-id="Menyampaikan materi kursus online tentang IoT dan membimbing siswa dalam pemrograman dan elektronika." data-lang-en="Delivered online course material on IoT and mentored students in programming and electronics.">Menyampaikan materi kursus online tentang IoT dan membimbing siswa dalam pemrograman dan elektronika.</p>
                             </div>
                         </div>
@@ -457,7 +483,7 @@
                             <div class="p-6 rounded-lg glass-effect timeline-item-content">
                                 <h4 class="font-bold text-xl text-white">Computer Vision Programmer</h4>
                                 <a href="https://www.uny.ac.id/" target="_blank" class="text-md font-medium text-gray-300 hover:text-white">UNY Robotics Team</a>
-                                <p class="text-sm text-gray-500 mb-3" data-lang-id="Okt 2018 - Okt 2021" data-lang-en="Oct 2018 - Oct 2021">Okt 2018 - Okt 2021</p>
+                                <p class="text-sm text-gray-500 mb-3"><span data-lang-id="Okt 2018 - Okt 2021" data-lang-en="Oct 2018 - Oct 2021">Okt 2018 - Okt 2021</span> · <span class="exp-duration" data-start="2018-10-01" data-end="2021-10-31"></span></p>
                                 <p class="text-sm" data-lang-id="Merancang sistem deteksi objek untuk robot sepak bola beroda menggunakan Python, OpenCV, dan Tensorflow di platform Jetson Nano." data-lang-en="Designed an object detection system for a wheeled soccer robot using Python, OpenCV, and Tensorflow on the Jetson Nano platform.">Merancang sistem deteksi objek untuk robot sepak bola beroda menggunakan Python, OpenCV, dan Tensorflow di platform Jetson Nano.</p>
                             </div>
                         </div>
@@ -633,6 +659,10 @@
                 }
             }
 
+            function getSystemTheme() {
+                return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+
             themeToggleBtn.addEventListener('click', () => {
                 const currentTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -674,21 +704,31 @@
             }
 
             function calculateExperience() {
-                const startDate = new Date('2022-04-01');
-                const today = new Date();
-                let years = today.getFullYear() - startDate.getFullYear();
-                let months = today.getMonth() - startDate.getMonth();
-                if (months < 0) { years--; months += 12; }
-                const currentLang = document.documentElement.lang;
-                let durationShort = currentLang === 'id' ? `${years > 0 ? years + ' thn ' : ''}${months > 0 ? months + ' bln' : ''}`.trim() : `${years > 0 ? years + 'y ' : ''}${months > 0 ? months + 'm' : ''}`.trim();
-                document.getElementById('experience-duration').textContent = durationShort;
+                document.querySelectorAll('.exp-duration').forEach(span => {
+                    const startDate = new Date(span.dataset.start);
+                    const endDate = span.dataset.end ? new Date(span.dataset.end) : new Date();
+                    let years = endDate.getFullYear() - startDate.getFullYear();
+                    let months = endDate.getMonth() - startDate.getMonth();
+                    if (months < 0) { years--; months += 12; }
+                    const currentLang = document.documentElement.lang;
+                    let durationShort = currentLang === 'id' ? `${years > 0 ? years + ' thn ' : ''}${months > 0 ? months + ' bln' : ''}`.trim() : `${years > 0 ? years + 'y ' : ''}${months > 0 ? months + 'm' : ''}`.trim();
+                    span.textContent = durationShort;
+                });
             }
 
             function setFooterYear() {
                 document.getElementById('current-year').textContent = new Date().getFullYear();
             }
 
+            function getDefaultLanguage() {
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                if (['Asia/Jakarta','Asia/Makassar','Asia/Jayapura'].includes(tz)) return 'id';
+                if (navigator.language && navigator.language.startsWith('id')) return 'id';
+                return 'en';
+            }
+
             function switchLanguage(lang) {
+                localStorage.setItem('lang', lang);
                 document.documentElement.lang = lang;
                 document.querySelectorAll('[data-lang-id]').forEach(el => {
                     const keyId = el.dataset.langId;
@@ -841,14 +881,15 @@
             function initFullscreenViewer() { /* ... full implementation ... */ }
 
             function init() {
-                const preferredTheme = localStorage.getItem('theme') || 'dark';
+                const preferredTheme = localStorage.getItem('theme') || getSystemTheme();
                 applyTheme(preferredTheme);
 
                 handleScroll();
                 calculateAge();
                 calculateExperience();
                 setFooterYear();
-                switchLanguage('id');
+                const preferredLang = localStorage.getItem('lang') || getDefaultLanguage();
+                switchLanguage(preferredLang);
                 initProfileAnimation();
                 initSkillsSlider();
                 initFullscreenViewer();
